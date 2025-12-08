@@ -9,6 +9,7 @@ dependencies = [
     "asyncpg==0.30.0",
     "fastapi[standard]>=0.124.0",
     "greenlet==3.1.1",
+    "loguru>=0.7.3",
     "psycopg[binary,pool]>=3.3.2",
     "pwdlib[argon2]>=0.3.0",
     "pydantic-settings==2.7.0",
