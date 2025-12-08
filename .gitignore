@@ -1,5 +1,7 @@
 .vscode
 .idea
+.envs/*
+!.envs/.env.example
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
