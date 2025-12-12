@@ -4,7 +4,7 @@ from app.core.config import settings
 
 logger.remove()
 
-LOG_DIR= os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
+LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
 
 LOG_FORMAT = "{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {name}:{function}:{line} | {message}"
 
@@ -23,7 +23,7 @@ logger.add(
     rotation="10 MB",
     retention="30 days",
     compression="zip",
-    enqueue=True
+    enqueue=True,
 )
 
 logger.add(
@@ -35,8 +35,9 @@ logger.add(
     compression="zip",
     backtrace=True,
     diagnose=True,
-    enqueue=True
+    enqueue=True,
 )
+
 
 def get_logger():
     return logger
