@@ -1,10 +1,14 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Literal
+import os
+
+current_file_dir = os.path.dirname(os.path.abspath(__file__))
+env_path = os.path.join(current_file_dir, "..", "..", "..", ".envs", ".env.development")
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file="../../.envs/.env.development",
+        env_file=env_path,
         env_file_encoding="utf-8",
         env_ignore_empty=True,
         extra="ignore",

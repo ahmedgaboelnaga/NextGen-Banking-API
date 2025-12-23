@@ -1,0 +1,19 @@
+# Git metadata
+.git/
+
+# Python cache
+*.pyc
+*.pyo
+__pycache__/
+
+# IDE/editor folders
+.vscode/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs and environment files
+*.log
+.envs/*

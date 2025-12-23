@@ -4,8 +4,8 @@ from fastapi import Depends
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-from .config import settings
-from .logging import get_logger
+from backend.app.core.config import settings
+from backend.app.core.logging import get_logger
 
 
 logger = get_logger()
