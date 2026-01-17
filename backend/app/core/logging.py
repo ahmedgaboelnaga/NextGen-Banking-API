@@ -1,10 +1,10 @@
-import os
+from pathlib import Path
 from loguru import logger
 from backend.app.core.config import settings
 
 logger.remove()
 
-LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
+LOG_DIR = Path(__file__).parent.parent / "logs"
 
 LOG_FORMAT = (
     "{time:YYYY-MM-DD HH:mm:ss.SSS} | "
@@ -14,7 +14,7 @@ LOG_FORMAT = (
 )
 
 logger.add(
-    sink=os.path.join(LOG_DIR, "debug.log"),
+    sink=str(LOG_DIR / "debug.log"),
     format=LOG_FORMAT,
     level="DEBUG" if settings.ENVIRONMENT == "development" else "INFO",
     filter=lambda record: record["level"].no <= logger.level("WARNING").no,
@@ -25,7 +25,7 @@ logger.add(
 )
 
 logger.add(
-    sink=os.path.join(LOG_DIR, "error.log"),
+    sink=str(LOG_DIR / "error.log"),
     format=LOG_FORMAT,
     level="ERROR",
     rotation="10 MB",

@@ -1,9 +1,9 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pathlib import Path
 from typing import Literal
-import os
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
-current_file_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = os.path.join(current_file_dir, "..", "..", "..", ".envs", ".env.development")
+
+env_path = Path(__file__).parent.parent.parent.parent / ".envs" / ".env.development"
 
 
 class Settings(BaseSettings):
