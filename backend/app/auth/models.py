@@ -6,7 +6,6 @@ from sqlalchemy.dialects import postgresql as pg
 from sqlalchemy import func, text
 from backend.app.auth.schema import BaseUserSchema, RoleChoicesSchema
 
-
 class User(BaseUserSchema, table=True):
     id: uuid.UUID = Field(
         sa_column=Column(
@@ -24,15 +23,15 @@ class User(BaseUserSchema, table=True):
         default_factory=lambda: datetime.now(),
         sa_column=Column(
             pg.TIMESTAMP(timezone=True),
-            nullabale=False,
+            nullable=False,
             server_default=text("CURRENT_TIMESTAMP"),
         ),
     )
-    created_at: datetime = Field(
+    updated_at: datetime = Field(
         default_factory=lambda: datetime.now(),
         sa_column=Column(
             pg.TIMESTAMP(timezone=True),
-            nullabale=False,
+            nullable=False,
             onupdate=func.current_timestamp(),
         ),
     )

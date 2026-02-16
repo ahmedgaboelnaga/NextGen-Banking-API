@@ -7,7 +7,7 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./backend/docker/development/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./backend/Docker/development/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
     networks:
       - nextgen_local_network
     command:
@@ -16,7 +16,7 @@ services:
   api: &api
     build:
       context: .
-      dockerfile: ./backend/docker/development/fastapi/Dockerfile
+      dockerfile: ./backend/Docker/development/fastapi/Dockerfile
     volumes:
       - .:/src
       - ./backend/app/logs:/src/backend/app/logs
@@ -61,7 +61,7 @@ services:
   postgres:
     build:
       context: .
-      dockerfile: ./backend/docker/development/postgres/Dockerfile
+      dockerfile: ./backend/Docker/development/postgres/Dockerfile
     ports:
       - "5432:5432"
     volumes:

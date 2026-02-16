@@ -10,6 +10,7 @@ from sqlalchemy.pool import AsyncAdaptedQueuePool
 
 from backend.app.core.config import settings
 from backend.app.core.logging import get_logger
+from backend.app.core.model_registry import load_models
 
 
 logger = get_logger()
@@ -62,6 +63,9 @@ SessionDep = Annotated[AsyncSession, Depends(get_async_session)]
 
 async def init_db() -> None:
     try:
+        load_models()
+        logger.info("Models loaded successfully")
+
         max_retries = 3
         retry_delay = 2
 
