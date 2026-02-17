@@ -1,0 +1,11 @@
+{% extends "base.txt" %}
+
+{% block header %} Activate Your Account {% endblock %}
+
+{% block content %}
+    Welcome to {{ site_name }}
+    Thank you for registering with us. Please click the link below to activate your account:
+    {{ activation_url }}
+    Note: If you cannot click the link, please copy and paste it in your browser.
+    <p>This link will expire in {{ expiry_time }} minutes.</p>
+{% endblock %}
