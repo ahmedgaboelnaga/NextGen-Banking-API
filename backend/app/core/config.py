@@ -41,5 +41,14 @@ class Settings(BaseSettings):
     LOGIN_ATTEMPTS: int = 3
     LOCKOUT_DURATION_MINUTES: int = 2 if ENVIRONMENT == "local" else 5
 
+    # Internationalization settings
+    DEFAULT_LANGUAGE: str = "en"
+    SUPPORTED_LANGUAGES: list[str] = [
+        "en",
+        "ar",
+        "fr",
+        "es",
+    ]  # English, Arabic, French, Spanish
+
 
 settings = Settings()

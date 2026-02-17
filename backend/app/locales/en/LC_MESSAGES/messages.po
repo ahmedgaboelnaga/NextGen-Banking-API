@@ -1,0 +1,167 @@
+# English translations for NextGen Banking API
+# Copyright (C) 2026
+# This file is distributed under the same license as the NextGen Banking API.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: NextGen Banking API 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-17 12:00+0000\n"
+"PO-Revision-Date: 2026-02-17 12:00+0000\n"
+"Last-Translator: API Team\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# API Messages
+msgid "Welcome to the Next-Gen Backend API!"
+msgstr "Welcome to the Next-Gen Backend API!"
+
+msgid "Hello, {name}!"
+msgstr "Hello, {name}!"
+
+# Authentication Messages
+msgid "Invalid credentials"
+msgstr "Invalid credentials"
+
+msgid "Account locked due to too many failed attempts"
+msgstr "Account locked due to too many failed attempts"
+
+msgid "OTP sent successfully"
+msgstr "OTP sent successfully"
+
+msgid "Invalid or expired OTP"
+msgstr "Invalid or expired OTP"
+
+msgid "Login successful"
+msgstr "Login successful"
+
+msgid "Logout successful"
+msgstr "Logout successful"
+
+msgid "User not found"
+msgstr "User not found"
+
+msgid "Email already registered"
+msgstr "Email already registered"
+
+msgid "Account created successfully"
+msgstr "Account created successfully"
+
+msgid "Account activated successfully"
+msgstr "Account activated successfully"
+
+msgid "Activation link expired"
+msgstr "Activation link expired"
+
+# Email Templates
+msgid "Your OTP Code"
+msgstr "Your OTP Code"
+
+msgid "One-Time Password"
+msgstr "One-Time Password"
+
+msgid "Your One-Time Password (OTP) for login is:"
+msgstr "Your One-Time Password (OTP) for login is:"
+
+msgid "This OTP is valid for {expiry_time} minutes. Please use it within this timeframe to complete your login process."
+msgstr "This OTP is valid for {expiry_time} minutes. Please use it within this timeframe to complete your login process."
+
+msgid "If you did not request this OTP, please ignore this email and contact our support team immediately."
+msgstr "If you did not request this OTP, please ignore this email and contact our support team immediately."
+
+msgid "Account Activation"
+msgstr "Account Activation"
+
+msgid "Welcome to {site_name}!"
+msgstr "Welcome to {site_name}!"
+
+msgid "Thank you for registering. Please click the button below to activate your account:"
+msgstr "Thank you for registering. Please click the button below to activate your account:"
+
+msgid "Activate Account"
+msgstr "Activate Account"
+
+msgid "If the button doesn't work, copy and paste this link into your browser:"
+msgstr "If the button doesn't work, copy and paste this link into your browser:"
+
+msgid "This activation link will expire in 24 hours."
+msgstr "This activation link will expire in 24 hours."
+
+# Validation Messages
+msgid "Invalid email format"
+msgstr "Invalid email format"
+
+msgid "Password must be at least 8 characters"
+msgstr "Password must be at least 8 characters"
+
+msgid "Password must contain at least one uppercase letter"
+msgstr "Password must contain at least one uppercase letter"
+
+msgid "Password must contain at least one lowercase letter"
+msgstr "Password must contain at least one lowercase letter"
+
+msgid "Password must contain at least one number"
+msgstr "Password must contain at least one number"
+
+msgid "Password must contain at least one special character"
+msgstr "Password must contain at least one special character"
+
+msgid "First name is required"
+msgstr "First name is required"
+
+msgid "Last name is required"
+msgstr "Last name is required"
+
+# Error Messages
+msgid "Internal server error"
+msgstr "Internal server error"
+
+msgid "Resource not found"
+msgstr "Resource not found"
+
+msgid "Unauthorized access"
+msgstr "Unauthorized access"
+
+msgid "Forbidden"
+msgstr "Forbidden"
+
+msgid "Bad request"
+msgstr "Bad request"
+
+msgid "Service unavailable"
+msgstr "Service unavailable"
+
+# Plural Forms
+msgid "You have {n} message"
+msgid_plural "You have {n} messages"
+msgstr[0] "You have {n} message"
+msgstr[1] "You have {n} messages"
+
+msgid "You have {n} notification"
+msgid_plural "You have {n} notifications"
+msgstr[0] "You have {n} notification"
+msgstr[1] "You have {n} notifications"
+
+# Success Messages
+msgid "Operation completed successfully"
+msgstr "Operation completed successfully"
+
+msgid "Data saved successfully"
+msgstr "Data saved successfully"
+
+msgid "Data updated successfully"
+msgstr "Data updated successfully"
+
+msgid "Data deleted successfully"
+msgstr "Data deleted successfully"
+
+# Email Footer Messages
+msgid "If you have any questions, please contact us at <a href=\"mailto:{{ support_email }}\">{{ support_email }}</a>."
+msgstr "If you have any questions, please contact us at <a href=\"mailto:{{ support_email }}\">{{ support_email }}</a>."
+
+msgid "Thanks for using our service! &copy; {{ site_name }} Team. All rights reserved."
+msgstr "Thanks for using our service! &copy; {{ site_name }} Team. All rights reserved."

@@ -44,8 +44,8 @@
     </div>
     <div class="footer">
       {% block footer %}
-        <p>If you have any questions, please contact us at <a href="mailto:{{ support_email }}">{{ support_email }}</a>.</p>
-        <p>Thanks for using our service! &copy; {{ site_name }} Team. All rights reserved.</p>
+        <p>{% trans support_email=support_email %}If you have any questions, please contact us at <a href="mailto:{{ support_email }}">{{ support_email }}</a>.{% endtrans %}</p>
+        <p>{% trans site_name=site_name %}Thanks for using our service! &copy; {{ site_name }} Team. All rights reserved.{% endtrans %}</p>
       {% endblock %}
     </div>
   </div>

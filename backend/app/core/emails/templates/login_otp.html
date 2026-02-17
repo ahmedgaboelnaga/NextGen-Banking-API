@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %} Your OTP Code {% endblock %}
+{% block title %}{% trans %}Your OTP Code{% endtrans %}{% endblock %}
 
-{% block header %} One-Time Password {% endblock %}
+{% block header %}{% trans %}One-Time Password{% endtrans %}{% endblock %}
 
 {% block content %}
-    <p>Hello,</p>
-    <p>Your One-Time Password (OTP) for login is:</p>
+    <p>{% trans %}Hello{% endtrans %},</p>
+    <p>{% trans %}Your One-Time Password (OTP) for login is:{% endtrans %}</p>
     <h2 style="text-align: center; padding: 10px; background-color: f8f9fa; border-radius: 5px;">{{ otp }}</h2>
-    <p>This OTP is valid for {{ expiry_time }} minutes. Please us it within this timeframe to complete your login process.</p>
-    <p>If you did not request this OTP, please ignore this email and contact our support team immediately.</p>
+    <p>{% trans expiry_time=expiry_time %}This OTP is valid for {{ expiry_time }} minutes. Please use it within this timeframe to complete your login process.{% endtrans %}</p>
+    <p>{% trans %}If you did not request this OTP, please ignore this email and contact our support team immediately.{% endtrans %}</p>
 {% endblock %}

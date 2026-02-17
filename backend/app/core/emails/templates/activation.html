@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %} Account Activation {% endblock %}
+{% block title %}{% trans %}Account Activation{% endtrans %}{% endblock %}
 
-{% block header %} Activate Your Account {% endblock %}
+{% block header %}{% trans %}Activate Your Account{% endtrans %}{% endblock %}
 
 {% block content %}
-    <h2>Welcome to {{ site_name }}</h2>
-    <p>Thank you for registering with us. Please click the button below to activate your account:</p>
+    <h2>{% trans site_name=site_name %}Welcome to {{ site_name }}{% endtrans %}</h2>
+    <p>{% trans %}Thank you for registering. Please click the button below to activate your account:{% endtrans %}</p>
     <a href="{{ activation_url }}" style="background-color: #4cAF50; color: white; padding: 14px 20px; text-decoration: none; border-radius: 4px;">
-        Activate Account
+        {% trans %}Activate Account{% endtrans %}
     </a>
-    <p>If the button does not work, copy and paste the following link into your browser:</p>
+    <p>{% trans %}If the button doesn't work, copy and paste this link into your browser:{% endtrans %}</p>
     <div style="word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 4px; margin: 10px 0; font-family: monospace;">
         {{ activation_url }}
     </div>
-    <p>This link will expire in {{ expiry_time }} minutes.</p>
+    <p>{% trans %}This activation link will expire in 24 hours.{% endtrans %}</p>
 {% endblock %}

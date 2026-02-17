@@ -10,6 +10,7 @@ from backend.app.core.config import settings
 from backend.app.core.db import init_db, engine
 from backend.app.core.logging import get_logger
 from backend.app.core.health import health_checker, ServiceStatus
+from backend.app.core.middleware import LanguageMiddleware
 
 logger = get_logger()
 
@@ -72,6 +73,9 @@ app = FastAPI(
     openapi_url=f"{settings.API_V1_STR}/openapi.json",
     lifespan=lifespan,
 )
+
+# Add Language/i18n middleware
+app.add_middleware(LanguageMiddleware)
 
 
 @app.get("/health", response_model=dict, tags=["health"])
