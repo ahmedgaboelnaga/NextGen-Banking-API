@@ -37,9 +37,14 @@ class Settings(BaseSettings):
     RABBITMQ_USER: str = "guest"
     RABBITMQ_PASSWORD: str = "guest"
 
-    OTP_EXPIRATION_MINUTES: int = 2 if ENVIRONMENT == "local" else 5
+    OTP_EXPIRATION_MINUTES: int = 2 if ENVIRONMENT == "development" else 5
     LOGIN_ATTEMPTS: int = 3
-    LOCKOUT_DURATION_MINUTES: int = 2 if ENVIRONMENT == "local" else 5
+    LOCKOUT_DURATION_MINUTES: int = 2 if ENVIRONMENT == "development" else 5
+    ACTIVATION_TOKEN_EXPIRATION_MINUTES: int = 2 if ENVIRONMENT == "development" else 5
+    API_BASE_URL: str = ""
+    SUPPORT_EMAIL: str = ""
+    JWT_SECRET_KEY: str = ""
+    JWT_ALGORITHM: str = "HS256"
 
     # Internationalization settings
     DEFAULT_LANGUAGE: str = "en"

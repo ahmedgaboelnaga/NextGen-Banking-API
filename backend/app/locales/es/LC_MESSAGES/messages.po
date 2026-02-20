@@ -1,167 +1,245 @@
 # Spanish translations for NextGen Banking API
 # Copyright (C) 2026
-# This file is distributed under the same license as the NextGen Banking API.
+# This file is distributed under the same license as the NextGen Banking
+# API.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NextGen Banking API 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-17 12:00+0000\n"
+"POT-Creation-Date: 2026-02-20 17:21+0200\n"
 "PO-Revision-Date: 2026-02-17 12:00+0000\n"
 "Last-Translator: API Team\n"
-"Language-Team: Spanish\n"
 "Language: es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Spanish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 # API Messages
+#: backend/app/api/routes/home.py:12
 msgid "Welcome to the Next-Gen Backend API!"
 msgstr "¡Bienvenido a la API Backend de próxima generación!"
 
-msgid "Hello, {name}!"
-msgstr "¡Hola, {name}!"
-
-# Authentication Messages
-msgid "Invalid credentials"
-msgstr "Credenciales inválidas"
-
-msgid "Account locked due to too many failed attempts"
-msgstr "Cuenta bloqueada debido a demasiados intentos fallidos"
-
-msgid "OTP sent successfully"
-msgstr "OTP enviado exitosamente"
-
-msgid "Invalid or expired OTP"
-msgstr "OTP inválido o expirado"
-
-msgid "Login successful"
-msgstr "Inicio de sesión exitoso"
-
-msgid "Logout successful"
-msgstr "Cierre de sesión exitoso"
-
-msgid "User not found"
-msgstr "Usuario no encontrado"
-
-msgid "Email already registered"
-msgstr "Correo electrónico ya registrado"
-
-msgid "Account created successfully"
-msgstr "Cuenta creada exitosamente"
-
-msgid "Account activated successfully"
-msgstr "Cuenta activada exitosamente"
-
-msgid "Activation link expired"
-msgstr "Enlace de activación expirado"
-
-# Email Templates
-msgid "Your OTP Code"
-msgstr "Su código OTP"
-
-msgid "One-Time Password"
-msgstr "Contraseña de un solo uso"
-
-msgid "Your One-Time Password (OTP) for login is:"
-msgstr "Su contraseña de un solo uso (OTP) para iniciar sesión es:"
-
-msgid "This OTP is valid for {expiry_time} minutes. Please use it within this timeframe to complete your login process."
-msgstr "Este OTP es válido por {expiry_time} minutos. Por favor úselo dentro de este plazo para completar su proceso de inicio de sesión."
-
-msgid "If you did not request this OTP, please ignore this email and contact our support team immediately."
-msgstr "Si no solicitó este OTP, por favor ignore este correo y contacte a nuestro equipo de soporte inmediatamente."
-
+#: backend/app/core/emails/templates/activation.html:3
 msgid "Account Activation"
 msgstr "Activación de cuenta"
 
-msgid "Welcome to {site_name}!"
-msgstr "¡Bienvenido a {site_name}!"
+#: backend/app/core/emails/templates/activation.html:5
+#: backend/app/core/emails/templates/activation.txt:3
+msgid "Activate Your Account"
+msgstr "Activar su cuenta"
 
-msgid "Thank you for registering. Please click the button below to activate your account:"
-msgstr "Gracias por registrarse. Por favor haga clic en el botón de abajo para activar su cuenta:"
+#: backend/app/core/emails/templates/activation.html:8
+#: backend/app/core/emails/templates/activation.txt:6
+#, python-format
+msgid "Welcome to %(site_name)s"
+msgstr "¡Bienvenido a %(site_name)s!"
 
+#: backend/app/core/emails/templates/activation.html:9
+#: backend/app/core/emails/templates/activation.txt:8
+msgid ""
+"Thank you for registering. Please click the button below to activate your"
+" account:"
+msgstr ""
+"Gracias por registrarse. Por favor haga clic en el botón de abajo para "
+"activar su cuenta:"
+
+#: backend/app/core/emails/templates/activation.html:11
 msgid "Activate Account"
 msgstr "Activar cuenta"
 
+#: backend/app/core/emails/templates/activation.html:13
+#: backend/app/core/emails/templates/activation.txt:12
 msgid "If the button doesn't work, copy and paste this link into your browser:"
 msgstr "Si el botón no funciona, copie y pegue este enlace en su navegador:"
 
+#: backend/app/core/emails/templates/activation.html:17
+#, python-format
+msgid "This activation link will expire in %(expiry_time)s hours."
+msgstr "Este enlace de activación expirará en %(expiry_time)s horas."
+
+#: backend/app/core/emails/templates/activation.txt:14
 msgid "This activation link will expire in 24 hours."
 msgstr "Este enlace de activación expirará en 24 horas."
 
-# Validation Messages
-msgid "Invalid email format"
-msgstr "Formato de correo electrónico inválido"
+# Email Footer Messages
+#: backend/app/core/emails/templates/base.html:47
+#, fuzzy, python-format
+msgid ""
+"If you have any questions, please contact us at <a "
+"href=\"mailto:%(support_email)s\">%(support_email)s</a>."
+msgstr ""
+"Si tiene alguna pregunta, contáctenos en <a href=\"mailto:{{ "
+"support_email }}\">{{ support_email }}</a>."
 
-msgid "Password must be at least 8 characters"
-msgstr "La contraseña debe tener al menos 8 caracteres"
-
-msgid "Password must contain at least one uppercase letter"
-msgstr "La contraseña debe contener al menos una letra mayúscula"
-
-msgid "Password must contain at least one lowercase letter"
-msgstr "La contraseña debe contener al menos una letra minúscula"
-
-msgid "Password must contain at least one number"
-msgstr "La contraseña debe contener al menos un número"
-
-msgid "Password must contain at least one special character"
-msgstr "La contraseña debe contener al menos un carácter especial"
-
-msgid "First name is required"
-msgstr "El nombre es requerido"
-
-msgid "Last name is required"
-msgstr "El apellido es requerido"
-
-# Error Messages
-msgid "Internal server error"
-msgstr "Error interno del servidor"
-
-msgid "Resource not found"
-msgstr "Recurso no encontrado"
-
-msgid "Unauthorized access"
-msgstr "Acceso no autorizado"
-
-msgid "Forbidden"
-msgstr "Prohibido"
-
-msgid "Bad request"
-msgstr "Solicitud incorrecta"
-
-msgid "Service unavailable"
-msgstr "Servicio no disponible"
-
-# Plural Forms
-msgid "You have {n} message"
-msgid_plural "You have {n} messages"
-msgstr[0] "Tiene {n} mensaje"
-msgstr[1] "Tiene {n} mensajes"
-
-msgid "You have {n} notification"
-msgid_plural "You have {n} notifications"
-msgstr[0] "Tiene {n} notificación"
-msgstr[1] "Tiene {n} notificaciones"
-
-# Success Messages
-msgid "Operation completed successfully"
-msgstr "Operación completada exitosamente"
-
-msgid "Data saved successfully"
-msgstr "Datos guardados exitosamente"
-
-msgid "Data updated successfully"
-msgstr "Datos actualizados exitosamente"
-
-msgid "Data deleted successfully"
-msgstr "Datos eliminados exitosamente"
+#: backend/app/core/emails/templates/base.html:48
+#, fuzzy, python-format
+msgid ""
+"Thanks for using our service! &copy; %(site_name)s Team. All rights "
+"reserved."
+msgstr ""
+"¡Gracias por usar nuestro servicio! &copy; Equipo {{ site_name }}. Todos "
+"los derechos reservados."
 
 # Email Footer Messages
-msgid "If you have any questions, please contact us at <a href=\"mailto:{{ support_email }}\">{{ support_email }}</a>."
-msgstr "Si tiene alguna pregunta, contáctenos en <a href=\"mailto:{{ support_email }}\">{{ support_email }}</a>."
+#: backend/app/core/emails/templates/base.txt:4
+#, fuzzy, python-format
+msgid "If you have any questions, please contact us at %(support_email)s."
+msgstr ""
+"Si tiene alguna pregunta, contáctenos en <a href=\"mailto:{{ "
+"support_email }}\">{{ support_email }}</a>."
 
-msgid "Thanks for using our service! &copy; {{ site_name }} Team. All rights reserved."
-msgstr "¡Gracias por usar nuestro servicio! &copy; Equipo {{ site_name }}. Todos los derechos reservados."
+#: backend/app/core/emails/templates/base.txt:5
+#, fuzzy, python-format
+msgid "Thanks for using our service! © %(site_name)s Team. All rights reserved."
+msgstr ""
+"¡Gracias por usar nuestro servicio! &copy; Equipo {{ site_name }}. Todos "
+"los derechos reservados."
+
+# Email Templates
+#: backend/app/core/emails/templates/login_otp.html:3
+msgid "Your OTP Code"
+msgstr "Su código OTP"
+
+#: backend/app/core/emails/templates/login_otp.html:5
+#: backend/app/core/emails/templates/login_otp.txt:3
+msgid "One-Time Password"
+msgstr "Contraseña de un solo uso"
+
+#: backend/app/core/emails/templates/login_otp.html:8
+#: backend/app/core/emails/templates/login_otp.txt:6
+msgid "Hello"
+msgstr ""
+
+#: backend/app/core/emails/templates/login_otp.html:9
+#: backend/app/core/emails/templates/login_otp.txt:8
+msgid "Your One-Time Password (OTP) for login is:"
+msgstr "Su contraseña de un solo uso (OTP) para iniciar sesión es:"
+
+#: backend/app/core/emails/templates/login_otp.html:11
+#: backend/app/core/emails/templates/login_otp.txt:12
+#, fuzzy, python-format
+msgid ""
+"This OTP is valid for %(expiry_time)s minutes. Please use it within this "
+"timeframe to complete your login process."
+msgstr ""
+"Este OTP es válido por {expiry_time} minutos. Por favor úselo dentro de "
+"este plazo para completar su proceso de inicio de sesión."
+
+#: backend/app/core/emails/templates/login_otp.html:12
+#: backend/app/core/emails/templates/login_otp.txt:14
+msgid ""
+"If you did not request this OTP, please ignore this email and contact our"
+" support team immediately."
+msgstr ""
+"Si no solicitó este OTP, por favor ignore este correo y contacte a "
+"nuestro equipo de soporte inmediatamente."
+
+#~ msgid "Hello, {name}!"
+#~ msgstr "¡Hola, {name}!"
+
+# Authentication Messages
+#~ msgid "Invalid credentials"
+#~ msgstr "Credenciales inválidas"
+
+#~ msgid "Account locked due to too many failed attempts"
+#~ msgstr "Cuenta bloqueada debido a demasiados intentos fallidos"
+
+#~ msgid "OTP sent successfully"
+#~ msgstr "OTP enviado exitosamente"
+
+#~ msgid "Invalid or expired OTP"
+#~ msgstr "OTP inválido o expirado"
+
+#~ msgid "Login successful"
+#~ msgstr "Inicio de sesión exitoso"
+
+#~ msgid "Logout successful"
+#~ msgstr "Cierre de sesión exitoso"
+
+#~ msgid "User not found"
+#~ msgstr "Usuario no encontrado"
+
+#~ msgid "Email already registered"
+#~ msgstr "Correo electrónico ya registrado"
+
+#~ msgid "Account created successfully"
+#~ msgstr "Cuenta creada exitosamente"
+
+#~ msgid "Account activated successfully"
+#~ msgstr "Cuenta activada exitosamente"
+
+#~ msgid "Activation link expired"
+#~ msgstr "Enlace de activación expirado"
+
+# Validation Messages
+#~ msgid "Invalid email format"
+#~ msgstr "Formato de correo electrónico inválido"
+
+#~ msgid "Password must be at least 8 characters"
+#~ msgstr "La contraseña debe tener al menos 8 caracteres"
+
+#~ msgid "Password must contain at least one uppercase letter"
+#~ msgstr "La contraseña debe contener al menos una letra mayúscula"
+
+#~ msgid "Password must contain at least one lowercase letter"
+#~ msgstr "La contraseña debe contener al menos una letra minúscula"
+
+#~ msgid "Password must contain at least one number"
+#~ msgstr "La contraseña debe contener al menos un número"
+
+#~ msgid "Password must contain at least one special character"
+#~ msgstr "La contraseña debe contener al menos un carácter especial"
+
+#~ msgid "First name is required"
+#~ msgstr "El nombre es requerido"
+
+#~ msgid "Last name is required"
+#~ msgstr "El apellido es requerido"
+
+# Error Messages
+#~ msgid "Internal server error"
+#~ msgstr "Error interno del servidor"
+
+#~ msgid "Resource not found"
+#~ msgstr "Recurso no encontrado"
+
+#~ msgid "Unauthorized access"
+#~ msgstr "Acceso no autorizado"
+
+#~ msgid "Forbidden"
+#~ msgstr "Prohibido"
+
+#~ msgid "Bad request"
+#~ msgstr "Solicitud incorrecta"
+
+#~ msgid "Service unavailable"
+#~ msgstr "Servicio no disponible"
+
+# Plural Forms
+#~ msgid "You have {n} message"
+#~ msgid_plural "You have {n} messages"
+#~ msgstr[0] "Tiene {n} mensaje"
+#~ msgstr[1] "Tiene {n} mensajes"
+
+#~ msgid "You have {n} notification"
+#~ msgid_plural "You have {n} notifications"
+#~ msgstr[0] "Tiene {n} notificación"
+#~ msgstr[1] "Tiene {n} notificaciones"
+
+# Success Messages
+#~ msgid "Operation completed successfully"
+#~ msgstr "Operación completada exitosamente"
+
+#~ msgid "Data saved successfully"
+#~ msgstr "Datos guardados exitosamente"
+
+#~ msgid "Data updated successfully"
+#~ msgstr "Datos actualizados exitosamente"
+
+#~ msgid "Data deleted successfully"
+#~ msgstr "Datos eliminados exitosamente"
+
