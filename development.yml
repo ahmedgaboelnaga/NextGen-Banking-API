@@ -25,10 +25,14 @@ services:
     env_file:
       - ./.envs/.env.development
     depends_on:
-      - postgres
-      - mailpit
-      - redis
-      - rabbitmq
+      postgres:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     command: /start.sh
     networks:
       - nextgen_local_network
@@ -70,6 +74,11 @@ services:
       - ./.envs/.env.development
     networks:
       - nextgen_local_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   
   redis:
     image: redis:7.0-alpine
@@ -79,6 +88,11 @@ services:
       - "6379:6379"
     networks:
       - nextgen_local_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   rabbitmq:
     image: rabbitmq:3.11-management
@@ -90,6 +104,11 @@ services:
       - nextgen_rabbitmq_data:/var/lib/rabbitmq
     networks:
       - nextgen_local_network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.rabbitmq.entrypoints=web"
