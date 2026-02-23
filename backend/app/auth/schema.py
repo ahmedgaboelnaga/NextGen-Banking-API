@@ -60,8 +60,8 @@ class UserCreateSchema(BaseUserSchema):
     confirm_password: str = Field(min_length=8, max_length=40)
 
     @field_validator("confirm_password")
-    def passwords_match(cls, v, values):
-        if "password" in values and v != values["password"]:
+    def passwords_match(cls, v, info):
+        if "password" in info.data and v != info.data["password"]:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail={

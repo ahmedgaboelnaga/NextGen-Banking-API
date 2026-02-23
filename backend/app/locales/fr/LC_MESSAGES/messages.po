@@ -245,3 +245,109 @@ msgstr ""
 #~ msgid "Data deleted successfully"
 #~ msgstr "Données supprimées avec succès"
 
+# User Auth Service Messages
+#: backend/app/api/services/user_auth.py
+msgid "Account is not active"
+msgstr "Le compte n'est pas actif"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please activate your account using the link sent to your email."
+msgstr "Veuillez activer votre compte en utilisant le lien envoyé à votre adresse e-mail."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is locked"
+msgstr "Le compte est verrouillé"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please contact support to unlock your account."
+msgstr "Veuillez contacter le support pour déverrouiller votre compte."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is inactive"
+msgstr "Le compte est inactif"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please contact support to activate your account."
+msgstr "Veuillez contacter le support pour activer votre compte."
+
+#: backend/app/api/services/user_auth.py
+msgid "User not found"
+msgstr "Utilisateur non trouvé"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please check the activation link or contact support."
+msgstr "Veuillez vérifier le lien d'activation ou contacter le support."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is already active"
+msgstr "Le compte est déjà actif"
+
+#: backend/app/api/services/user_auth.py
+msgid "You can log in with your credentials."
+msgstr "Vous pouvez vous connecter avec vos identifiants."
+
+#: backend/app/api/services/user_auth.py
+msgid "Activation token has expired"
+msgstr "Le jeton d'activation a expiré"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please request a new activation email."
+msgstr "Veuillez demander un nouvel e-mail d'activation."
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid activation token"
+msgstr "Jeton d'activation invalide"
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid credentials"
+msgstr "Identifiants invalides"
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid OTP"
+msgstr "OTP invalide"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please check your OTP and try again."
+msgstr "Veuillez vérifier votre OTP et réessayer."
+
+#: backend/app/api/services/user_auth.py
+msgid "Expired OTP"
+msgstr "OTP expiré"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please request a new OTP and try again."
+msgstr "Veuillez demander un nouvel OTP et réessayer."
+
+#: backend/app/api/services/user_auth.py
+msgid "An unexpected error occurred while verifying OTP."
+msgstr "Une erreur inattendue s'est produite lors de la vérification de l'OTP."
+
+#: backend/app/api/services/user_auth.py
+msgid "Please try again later."
+msgstr "Veuillez réessayer plus tard."
+
+#: backend/app/api/services/user_auth.py
+msgid "Your account is temporarily locked"
+msgstr "Votre compte est temporairement verrouillé"
+
+#: backend/app/api/services/user_auth.py
+#, python-brace-format
+msgid "Please try again after {remaining_minutes} minutes."
+msgstr "Veuillez réessayer après {remaining_minutes} minutes."
+
+# Register Route Messages
+#: backend/app/api/routes/auth/register.py
+msgid "User is already registered."
+msgstr "L'utilisateur est déjà enregistré."
+
+#: backend/app/api/routes/auth/register.py
+msgid "ID number is already registered."
+msgstr "Le numéro d'identité est déjà enregistré."
+
+#: backend/app/api/routes/auth/register.py
+msgid "Please register with different credentials."
+msgstr "Veuillez vous inscrire avec des informations d'identification différentes."
+
+#: backend/app/api/routes/auth/register.py
+msgid "Internal server error."
+msgstr "Erreur interne du serveur."

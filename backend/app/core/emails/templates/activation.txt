@@ -11,5 +11,5 @@
 
 {% trans %}If the button doesn't work, copy and paste this link into your browser:{% endtrans %}
 
-{% trans %}This activation link will expire in 24 hours.{% endtrans %}
+{% trans %}This activation link will expire in {{ expiry_time }} minutes.{% endtrans %}
 {% endblock %}

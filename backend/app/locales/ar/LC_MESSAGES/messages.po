@@ -246,3 +246,109 @@ msgstr ""
 #~ msgid "Data deleted successfully"
 #~ msgstr "تم حذف البيانات بنجاح"
 
+# User Auth Service Messages
+#: backend/app/api/services/user_auth.py
+msgid "Account is not active"
+msgstr "الحساب غير نشط"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please activate your account using the link sent to your email."
+msgstr "يرجى تفعيل حسابك باستخدام الرابط المرسل إلى بريدك الإلكتروني."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is locked"
+msgstr "الحساب مقفل"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please contact support to unlock your account."
+msgstr "يرجى التواصل مع الدعم الفني لإلغاء قفل حسابك."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is inactive"
+msgstr "الحساب غير فعال"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please contact support to activate your account."
+msgstr "يرجى التواصل مع الدعم الفني لتفعيل حسابك."
+
+#: backend/app/api/services/user_auth.py
+msgid "User not found"
+msgstr "المستخدم غير موجود"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please check the activation link or contact support."
+msgstr "يرجى التحقق من رابط التفعيل أو التواصل مع الدعم الفني."
+
+#: backend/app/api/services/user_auth.py
+msgid "Account is already active"
+msgstr "الحساب مفعّل بالفعل"
+
+#: backend/app/api/services/user_auth.py
+msgid "You can log in with your credentials."
+msgstr "يمكنك تسجيل الدخول باستخدام بيانات اعتمادك."
+
+#: backend/app/api/services/user_auth.py
+msgid "Activation token has expired"
+msgstr "انتهت صلاحية رمز التفعيل"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please request a new activation email."
+msgstr "يرجى طلب بريد تفعيل جديد."
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid activation token"
+msgstr "رمز التفعيل غير صالح"
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid credentials"
+msgstr "بيانات الاعتماد غير صحيحة"
+
+#: backend/app/api/services/user_auth.py
+msgid "Invalid OTP"
+msgstr "رمز التحقق غير صحيح"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please check your OTP and try again."
+msgstr "يرجى التحقق من رمز OTP والمحاولة مرة أخرى."
+
+#: backend/app/api/services/user_auth.py
+msgid "Expired OTP"
+msgstr "رمز التحقق منتهي الصلاحية"
+
+#: backend/app/api/services/user_auth.py
+msgid "Please request a new OTP and try again."
+msgstr "يرجى طلب رمز OTP جديد والمحاولة مرة أخرى."
+
+#: backend/app/api/services/user_auth.py
+msgid "An unexpected error occurred while verifying OTP."
+msgstr "حدث خطأ غير متوقع أثناء التحقق من رمز OTP."
+
+#: backend/app/api/services/user_auth.py
+msgid "Please try again later."
+msgstr "يرجى المحاولة مرة أخرى لاحقاً."
+
+#: backend/app/api/services/user_auth.py
+msgid "Your account is temporarily locked"
+msgstr "حسابك مقفل مؤقتاً"
+
+#: backend/app/api/services/user_auth.py
+#, python-brace-format
+msgid "Please try again after {remaining_minutes} minutes."
+msgstr "يرجى المحاولة مرة أخرى بعد {remaining_minutes} دقيقة."
+
+# Register Route Messages
+#: backend/app/api/routes/auth/register.py
+msgid "User is already registered."
+msgstr "المستخدم مسجّل مسبقاً."
+
+#: backend/app/api/routes/auth/register.py
+msgid "ID number is already registered."
+msgstr "رقم الهوية مسجّل مسبقاً."
+
+#: backend/app/api/routes/auth/register.py
+msgid "Please register with different credentials."
+msgstr "يرجى التسجيل ببيانات مختلفة."
+
+#: backend/app/api/routes/auth/register.py
+msgid "Internal server error."
+msgstr "خطأ داخلي في الخادم."

@@ -42,10 +42,11 @@ def generate_username() -> str:
     return f"{prefix}-{random_string}"
 
 
-def generate_activation_token(user_id: uuid.UUID) -> str:
+def create_activation_token(user_id: uuid.UUID) -> str:
     """Generate a JWT activation token."""
     payload = {
         "user_id": str(user_id),
+        "type": "activation",
         "exp": datetime.now(timezone.utc)
         + timedelta(minutes=settings.ACTIVATION_TOKEN_EXPIRATION_MINUTES),
         "iat": datetime.now(timezone.utc),

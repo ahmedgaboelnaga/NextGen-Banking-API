@@ -3,14 +3,14 @@ from backend.app.core.emails.base import EmailTemplate
 
 
 class ActivationEmail(EmailTemplate):
-    template_name = "activation_email.html"
-    template_name_plain = "activation_email.txt"
+    template_name = "activation.html"
+    template_name_plain = "activation.txt"
     subject = "Activate Your Account"
 
 
 async def send_activation_email(email: str, token: str) -> None:
     activation_url = (
-        f"{settings.API_BASE_URL}/{settings.API_V1_STR}/auth/activate?token={token}"
+        f"{settings.API_BASE_URL}{settings.API_V1_STR}/auth/activate?token={token}"
     )
     context = {
         "activation_url": activation_url,
