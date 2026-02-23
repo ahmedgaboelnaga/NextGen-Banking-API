@@ -45,6 +45,20 @@ class Settings(BaseSettings):
     SUPPORT_EMAIL: str = ""
     JWT_SECRET_KEY: str = ""
     JWT_ALGORITHM: str = "HS256"
+    JWT_ACCESS_TOKEN_EXPIRATION_MINUTES: int = (
+        30 if ENVIRONMENT == "development" else 15
+    )
+    JWT_REFRESH_TOKEN_EXPIRATION_DAYS: int = 1
+    
+    COOKIE_ACCESS_NAME: str = "access_token"
+    COOKIE_REFRESH_NAME: str = "refresh_token"
+    COOKIE_LOGGED_IN_NAME: str = "logged_in"
+
+    COOKIE_PATH: str = "/"
+    COOKIE_SECURE: bool = False if ENVIRONMENT == "development" else True
+    COOKIE_HTTP_ONLY: bool = True
+    COOKIE_SAME_SITE: str = "lax"
+    SIGNING_KEY: str = ""
 
     # Internationalization settings
     DEFAULT_LANGUAGE: str = "en"
