@@ -106,7 +106,7 @@ def set_auth_cookies(
         )
 
     logged_in_cookie_settings = cookie_settings.copy()
-    logged_in_cookie_settings["http_only"] = False
+    logged_in_cookie_settings["httponly"] = False
     logged_in_cookie_settings["max_age"] = (
         settings.JWT_ACCESS_TOKEN_EXPIRATION_MINUTES * 60
     )
@@ -120,4 +120,6 @@ def set_auth_cookies(
 def delete_auth_cookies(response: Response) -> None:
     response.delete_cookie(key=settings.COOKIE_ACCESS_NAME, path=settings.COOKIE_PATH)
     response.delete_cookie(key=settings.COOKIE_REFRESH_NAME, path=settings.COOKIE_PATH)
-    response.delete_cookie(key=settings.COOKIE_LOGGED_IN_NAME, path=settings.COOKIE_PATH)
+    response.delete_cookie(
+        key=settings.COOKIE_LOGGED_IN_NAME, path=settings.COOKIE_PATH
+    )
