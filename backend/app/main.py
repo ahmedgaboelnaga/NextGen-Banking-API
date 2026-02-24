@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, status
 from fastapi.responses import JSONResponse
+from starlette.middleware.sessions import SessionMiddleware
 
 from backend.app.api.main import api_router
 from backend.app.core.config import settings
@@ -76,6 +77,9 @@ app = FastAPI(
 
 # Add Language/i18n middleware
 app.add_middleware(LanguageMiddleware)
+
+# Session middleware required by OAuth state management (authlib)
+app.add_middleware(SessionMiddleware, secret_key=settings.SESSION_SECRET_KEY)
 
 
 @app.get("/health", response_model=dict, tags=["health"])

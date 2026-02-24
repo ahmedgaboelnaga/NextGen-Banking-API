@@ -19,11 +19,11 @@ class User(BaseUserSchema, table=True):
     hashed_password: str
     failed_login_attempts: int = Field(default=0, sa_type=pg.SMALLINT)
     last_failed_login: datetime | None = Field(
-        sa_column=Column(pg.TIMESTAMP(timezone=True))
+        default=None, sa_column=Column(pg.TIMESTAMP(timezone=True))
     )
     otp: str = Field(max_length=6, default="")
     otp_expiary_time: datetime | None = Field(
-        sa_column=Column(pg.TIMESTAMP(timezone=True))
+        default=None, sa_column=Column(pg.TIMESTAMP(timezone=True))
     )
     preferred_language: str = Field(
         default=settings.DEFAULT_LANGUAGE,

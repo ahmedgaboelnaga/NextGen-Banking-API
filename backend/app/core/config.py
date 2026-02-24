@@ -49,7 +49,7 @@ class Settings(BaseSettings):
         30 if ENVIRONMENT == "development" else 15
     )
     JWT_REFRESH_TOKEN_EXPIRATION_DAYS: int = 1
-    
+
     COOKIE_ACCESS_NAME: str = "access_token"
     COOKIE_REFRESH_NAME: str = "refresh_token"
     COOKIE_LOGGED_IN_NAME: str = "logged_in"
@@ -59,6 +59,11 @@ class Settings(BaseSettings):
     COOKIE_HTTP_ONLY: bool = True
     COOKIE_SAME_SITE: str = "lax"
     SIGNING_KEY: str = ""
+
+    # Google OAuth settings
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+    SESSION_SECRET_KEY: str = ""
 
     # Internationalization settings
     DEFAULT_LANGUAGE: str = "en"
