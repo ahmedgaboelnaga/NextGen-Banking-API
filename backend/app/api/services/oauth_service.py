@@ -12,6 +12,7 @@ from backend.app.auth.oauth.models import UserProvider
 from backend.app.auth.schema import AccountStatusSchema, SecurityQuestionSchema
 from backend.app.auth.utils import generate_password_hash, generate_username
 from backend.app.core.config import settings
+from backend.app.core.i18n import _
 from backend.app.core.logging import get_logger
 
 logger = get_logger()
@@ -88,8 +89,8 @@ class OAuthService:
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail={
                     "status": "error",
-                    "message": "Associated user account not found.",
-                    "action": "Please contact support.",
+                    "message": _("Associated user account not found."),
+                    "action": _("Please contact support."),
                 },
             )
         return user
@@ -109,8 +110,8 @@ class OAuthService:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail={
                 "status": "error",
-                "message": "Failed to generate a unique user ID. Please try again.",
-                "action": "Please try again later.",
+                "message": _("Failed to generate a unique user ID. Please try again."),
+                "action": _("Please try again later."),
             },
         )
 
@@ -141,7 +142,6 @@ class OAuthService:
             username=generate_username(),
             is_active=True,
             account_status=AccountStatusSchema.ACTIVE,
-
             # Required schema fields — user can update these later
             security_question=SecurityQuestionSchema.FAVORITE_COLOR,
             security_answer="oauth_placeholder",
@@ -156,16 +156,7 @@ class OAuthService:
     # Main entry-point
     # ------------------------------------------------------------------
 
-    async def     git add -A && git commit -m "feat: add Google OAuth login via Authlib
-    
-    - Add UserProvider model to track OAuth provider links
-    - Add OAuthService with get_or_create_user_via_google flow
-    - Add /auth/google and /auth/google/callback routes
-    - Add SessionMiddleware for OAuth CSRF state management
-    - Add itsdangerous and authlib dependencies
-    - Fix User model: add default=None to nullable datetime fields
-    - Add migration: create userprovider table
-    - Update .env.example with GOOGLE_CLIENT_ID/SECRET/SESSION_SECRET_KEY"get_or_create_user_via_google(
+    async def get_or_create_user_via_google(
         self,
         google_info: dict,
         session: AsyncSession,

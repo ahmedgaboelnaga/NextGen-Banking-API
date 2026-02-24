@@ -4,6 +4,7 @@ from backend.app.api.services.oauth_service import oauth, oauth_service
 from backend.app.auth.utils import create_jwt_token, set_auth_cookies
 from backend.app.core.config import settings
 from backend.app.core.db import SessionDep
+from backend.app.core.i18n import _
 from backend.app.core.logging import get_logger
 
 logger = get_logger()
@@ -38,8 +39,8 @@ async def google_callback(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={
                 "status": "error",
-                "message": "Google authorisation failed.",
-                "action": "Please try again.",
+                "message": _("Google authorisation failed."),
+                "action": _("Please try again."),
             },
         )
 
@@ -50,8 +51,10 @@ async def google_callback(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={
                 "status": "error",
-                "message": "Google did not return an email address.",
-                "action": "Please make sure your Google account has a verified email.",
+                "message": _("Google did not return an email address."),
+                "action": _(
+                    "Please make sure your Google account has a verified email."
+                ),
             },
         )
 
@@ -68,8 +71,8 @@ async def google_callback(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail={
                 "status": "error",
-                "message": "Failed to process Google login.",
-                "action": "Please try again later.",
+                "message": _("Failed to process Google login."),
+                "action": _("Please try again later."),
             },
         )
 
@@ -78,7 +81,7 @@ async def google_callback(
     set_auth_cookies(response, access_token, refresh_token)
 
     return {
-        "message": "Login successful.",
+        "message": _("Login successful."),
         "user": {
             "email": user.email,
             "username": user.username,
