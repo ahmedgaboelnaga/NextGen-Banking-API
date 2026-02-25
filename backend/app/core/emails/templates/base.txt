@@ -1,6 +1,6 @@
 {% block header %}{% endblock %}
 {% block content %}{% endblock %}
 {% block footer %}
-{% trans support_email=support_email %}If you have any questions, please contact us at {{ support_email }}.{% endtrans %}
-{% trans site_name=site_name %}Thanks for using our service! © {{ site_name }} Team. All rights reserved.{% endtrans %}
+{% trans %}Questions? Contact us at{% endtrans %} {{ support_email }}.
+© {{ site_name }}. {% trans %}All rights reserved.{% endtrans %}
 {% endblock %}

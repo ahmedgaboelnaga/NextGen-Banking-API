@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{% trans %}Account Security Alert{% endtrans %}{% endblock %}
+{% block header %}<span style="color: #dc2626;">{% trans %}Account Temporarily Locked{% endtrans %}</span>{% endblock %}
+
+{% block content %}
+    <h2>{% trans %}Hello from {{ site_name }}{% endtrans %}</h2>
+    <p>{% trans %}We detected multiple unsuccessful login attempts on your account. For your security, your account has been temporarily locked.{% endtrans %}</p>
+    
+    <p style="font-weight: bold; color: #1e293b;">
+        {% trans %}Your account will be automatically unlocked after {{ lockout_duration }}.{% endtrans %}
+    </p>
+
+    <div style="background-color: #fff1f2; border-left: 4px solid #f43f5e; padding: 20px; margin: 25px 0; border-radius: 4px;">
+        <p style="margin-top: 0; font-weight: bold; color: #9f1239;">{% trans %}If you did not attempt to log in, we recommend:{% endtrans %}</p>
+        <ul style="margin-bottom: 0; padding-left: 20px; color: #9f1239; line-height: 1.6;">
+            <li>{% trans %}Change your password immediately once access is restored.{% endtrans %}</li>
+            <li>{% trans %}Contact our support team if you believe your account has been compromised.{% endtrans %}</li>
+            <li>{% trans %}Check your email history for any other suspicious activity.{% endtrans %}</li>
+        </ul>
+    </div>
+
+    <table role="presentation" width="100%" style="background-color: #f8fafc; border-radius: 8px; margin-top: 20px;">
+        <tr>
+            <td style="padding: 15px; font-size: 14px; color: #64748b;">
+                <strong>{% trans %}Time of lockout:{% endtrans %}</strong> {{ lockout_time }}<br>
+                <strong>{% trans %}Account will unlock at:{% endtrans %}</strong> {{ unlock_time }}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

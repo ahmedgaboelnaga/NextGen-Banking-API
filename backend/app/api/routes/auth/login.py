@@ -70,7 +70,9 @@ async def request_login_otp(request_data: LoginRequestSchema, session: SessionDe
             await user_auth_service.generate_and_save_otp(user, session)
 
         return {
-            "message": "If an account exist with this email, an OTP has been sent to it."
+            "message": _(
+                "If an account exists with this email, an OTP has been sent to it."
+            )
         }
 
     except HTTPException as http_exc:

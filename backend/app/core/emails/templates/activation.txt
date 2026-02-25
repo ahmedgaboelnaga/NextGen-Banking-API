@@ -3,7 +3,7 @@
 {% block header %}{% trans %}Activate Your Account{% endtrans %}{% endblock %}
 
 {% block content %}
-{% trans site_name=site_name %}Welcome to {{ site_name }}{% endtrans %}
+{% trans %}Welcome to {{ site_name }}{% endtrans %}
 
 {% trans %}Thank you for registering. Please click the button below to activate your account:{% endtrans %}
 

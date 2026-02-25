@@ -1,0 +1,19 @@
+{% extends "base.txt" %}
+
+{% block header %}{% trans %}Account Security Alert{% endtrans %}{% endblock %}
+
+{% block content %}
+{% trans %}Hello from {{ site_name }}{% endtrans %}
+
+{% trans %}We detected multiple unsuccessful login attempts on your account. For your security, your account has been temporarily locked.{% endtrans %}
+
+{% trans %}Your account will be automatically unlocked after {{ lockout_duration }}{% endtrans %}
+
+{% trans %}If you didn't attempt to login to your account, we recommend:{% endtrans %}
+- {% trans %}Change your password immediately{% endtrans %}
+- {% trans %}Contact our support team if you believe your account has been compromised{% endtrans %}
+- {% trans %}Check your email for any suspicious activity{% endtrans %}
+
+{% trans %}Time of lockout:{% endtrans %} {{ lockout_time }}
+{% trans %}Account will unlock at:{% endtrans %} {{ unlock_time }}
+{% endblock %}
