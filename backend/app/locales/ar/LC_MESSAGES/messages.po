@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NextGen Banking API 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 02:42+0200\n"
+"POT-Creation-Date: 2026-02-25 23:51+0200\n"
 "PO-Revision-Date: 2026-02-17 12:00+0000\n"
 "Last-Translator: API Team\n"
 "Language: ar\n"
@@ -29,58 +29,66 @@ msgid "Account activated successfully."
 msgstr "تم تفعيل الحساب بنجاح."
 
 #: backend/app/api/routes/auth/activate.py:28
-msgid "Activation link has expired."
-msgstr "انتهت صلاحية رابط التفعيل."
-
-#: backend/app/api/routes/auth/activate.py:29
-#: backend/app/api/services/user_auth.py:259
-msgid "Please request a new activation email."
-msgstr "يرجى طلب بريد تفعيل جديد."
-
-#: backend/app/api/routes/auth/activate.py:39
+#: backend/app/api/routes/auth/activate.py:48
 msgid "Invalid activation link."
 msgstr "رابط التفعيل غير صالح."
 
-#: backend/app/api/routes/auth/activate.py:40
+#: backend/app/api/routes/auth/activate.py:29
+#: backend/app/api/routes/auth/activate.py:49
+#: backend/app/api/routes/auth/password_reset.py:76
+#: backend/app/api/routes/auth/password_reset.py:85
 msgid "Please confirm that the link is correct."
 msgstr "يرجى التأكد من صحة الرابط."
 
-#: backend/app/api/routes/auth/activate.py:48
-msgid "Account is already active."
-msgstr "الحساب مفعّل بالفعل."
+#: backend/app/api/routes/auth/activate.py:37
+msgid "Activation link has expired."
+msgstr "انتهت صلاحية رابط التفعيل."
 
-#: backend/app/api/routes/auth/activate.py:49
-#: backend/app/api/routes/auth/activate.py:88
-msgid "Please log in with your credentials."
-msgstr "يرجى تسجيل الدخول باستخدام بيانات اعتمادك."
+#: backend/app/api/routes/auth/activate.py:38
+msgid "Please request a new activation email."
+msgstr "يرجى طلب بريد تفعيل جديد."
 
-#: backend/app/api/routes/auth/activate.py:61
+#: backend/app/api/routes/auth/activate.py:57
+msgid "User already activated"
+msgstr "المستخدم مفعّل بالفعل"
+
+#: backend/app/api/routes/auth/activate.py:58
+msgid "You can log in with your credentials."
+msgstr "يمكنك تسجيل الدخول باستخدام بيانات اعتمادك."
+
+#: backend/app/api/routes/auth/activate.py:71
 msgid "Failed to activate user account."
 msgstr "فشل تفعيل حساب المستخدم."
 
-#: backend/app/api/routes/auth/activate.py:62
-#: backend/app/api/routes/auth/activate.py:109
+#: backend/app/api/routes/auth/activate.py:72
+#: backend/app/api/routes/auth/activate.py:119
 #: backend/app/api/routes/auth/google.py:75
 #: backend/app/api/routes/auth/login.py:87
 #: backend/app/api/routes/auth/login.py:129
+#: backend/app/api/routes/auth/password_reset.py:45
+#: backend/app/api/routes/auth/password_reset.py:98
 #: backend/app/api/services/oauth_service.py:114
-#: backend/app/api/services/user_auth.py:329
+#: backend/app/api/services/user_auth.py:308
 msgid "Please try again later."
 msgstr "يرجى المحاولة مرة أخرى لاحقاً."
 
-#: backend/app/api/routes/auth/activate.py:78
+#: backend/app/api/routes/auth/activate.py:88
 msgid "User not found."
 msgstr "المستخدم غير موجود."
 
-#: backend/app/api/routes/auth/activate.py:79
+#: backend/app/api/routes/auth/activate.py:89
 msgid "Please check the email address and try again."
 msgstr "يرجى التحقق من عنوان البريد الإلكتروني والمحاولة مرة أخرى."
 
-#: backend/app/api/routes/auth/activate.py:87
+#: backend/app/api/routes/auth/activate.py:97
 msgid "Account is already activated."
 msgstr "الحساب مفعّل بالفعل."
 
-#: backend/app/api/routes/auth/activate.py:94
+#: backend/app/api/routes/auth/activate.py:98
+msgid "Please log in with your credentials."
+msgstr "يرجى تسجيل الدخول باستخدام بيانات اعتمادك."
+
+#: backend/app/api/routes/auth/activate.py:104
 msgid ""
 "Activation email resent successfully, please check your inbox for "
 "activation link."
@@ -88,7 +96,7 @@ msgstr ""
 "تم إعادة إرسال بريد التفعيل بنجاح، يرجى التحقق من صندوق الوارد للحصول على"
 " رابط التفعيل."
 
-#: backend/app/api/routes/auth/activate.py:108
+#: backend/app/api/routes/auth/activate.py:118
 msgid "Failed to resend activation email."
 msgstr "فشل إعادة إرسال بريد التفعيل."
 
@@ -142,6 +150,40 @@ msgstr "فشل معالجة طلب رمز OTP لتسجيل الدخول."
 msgid "Failed to verify login OTP request."
 msgstr "فشل التحقق من طلب رمز OTP لتسجيل الدخول."
 
+#: backend/app/api/routes/auth/password_reset.py:32
+msgid "If an account with that email exists, a password reset link has been sent."
+msgstr ""
+
+#: backend/app/api/routes/auth/password_reset.py:42
+#, fuzzy
+msgid "An unexpected error occurred while processing your request."
+msgstr "حدث خطأ غير متوقع أثناء التحقق من رمز OTP."
+
+#: backend/app/api/routes/auth/password_reset.py:56
+msgid "Password has been reset successfully."
+msgstr ""
+
+#: backend/app/api/routes/auth/password_reset.py:64
+#, fuzzy
+msgid "Password reset link has expired."
+msgstr "انتهت صلاحية رابط التفعيل."
+
+#: backend/app/api/routes/auth/password_reset.py:65
+#, fuzzy
+msgid "Please request a new password reset email."
+msgstr "يرجى طلب بريد تفعيل جديد."
+
+#: backend/app/api/routes/auth/password_reset.py:75
+#: backend/app/api/routes/auth/password_reset.py:84
+#, fuzzy
+msgid "Invalid password reset link."
+msgstr "رابط التفعيل غير صالح."
+
+#: backend/app/api/routes/auth/password_reset.py:97
+#, fuzzy
+msgid "An unexpected error occurred while resetting password."
+msgstr "حدث خطأ غير متوقع أثناء التحقق من رمز OTP."
+
 # Register Route Messages
 #: backend/app/api/routes/auth/register.py:35
 #: backend/app/api/routes/auth/register.py:74
@@ -184,86 +226,79 @@ msgid "Failed to generate a unique user ID. Please try again."
 msgstr "فشل في إنشاء معرّف مستخدم فريد. يرجى المحاولة مرة أخرى."
 
 # User Auth Service Messages
-#: backend/app/api/services/user_auth.py:107
+#: backend/app/api/services/user_auth.py:109
 msgid "Account is not active"
 msgstr "الحساب غير نشط"
 
-#: backend/app/api/services/user_auth.py:108
+#: backend/app/api/services/user_auth.py:110
 msgid "Please activate your account using the link sent to your email."
 msgstr "يرجى تفعيل حسابك باستخدام الرابط المرسل إلى بريدك الإلكتروني."
 
-#: backend/app/api/services/user_auth.py:118
+#: backend/app/api/services/user_auth.py:120
 msgid "Account is locked"
 msgstr "الحساب مقفل"
 
-#: backend/app/api/services/user_auth.py:119
-msgid "Please contact support to unlock your account."
-msgstr "يرجى التواصل مع الدعم الفني لإلغاء قفل حسابك."
+#: backend/app/api/services/user_auth.py:121
+msgid "Please wait for the lockout period to expire and try again."
+msgstr "يرجى الانتظار حتى انتهاء فترة القفل والمحاولة مرة أخرى."
 
-#: backend/app/api/services/user_auth.py:127
+#: backend/app/api/services/user_auth.py:129
 msgid "Account is inactive"
 msgstr "الحساب غير فعال"
 
-#: backend/app/api/services/user_auth.py:128
+#: backend/app/api/services/user_auth.py:130
 msgid "Please contact support to activate your account."
 msgstr "يرجى التواصل مع الدعم الفني لتفعيل حسابك."
 
-#: backend/app/api/services/user_auth.py:229
+#: backend/app/api/services/user_auth.py:231
+#: backend/app/api/services/user_auth.py:389
 msgid "User not found"
 msgstr "المستخدم غير موجود"
 
-#: backend/app/api/services/user_auth.py:230
-msgid "Please check the activation link or contact support."
-msgstr "يرجى التحقق من رابط التفعيل أو التواصل مع الدعم الفني."
-
-#: backend/app/api/services/user_auth.py:240
-msgid "User already activated"
-msgstr "المستخدم مفعّل بالفعل"
-
-#: backend/app/api/services/user_auth.py:241
-msgid "You can log in with your credentials."
-msgstr "يمكنك تسجيل الدخول باستخدام بيانات اعتمادك."
-
-#: backend/app/api/services/user_auth.py:258
-msgid "Activation token expired"
-msgstr "انتهت صلاحية رمز التفعيل"
-
-#: backend/app/api/services/user_auth.py:267
-msgid "Invalid activation token"
-msgstr "رمز التفعيل غير صالح"
-
-#: backend/app/api/services/user_auth.py:286
+#: backend/app/api/services/user_auth.py:265
 msgid "Invalid credentials"
 msgstr "بيانات الاعتماد غير صحيحة"
 
-#: backend/app/api/services/user_auth.py:299
+#: backend/app/api/services/user_auth.py:278
 msgid "Invalid OTP"
 msgstr "رمز التحقق غير صحيح"
 
-#: backend/app/api/services/user_auth.py:300
+#: backend/app/api/services/user_auth.py:279
 msgid "Please check your OTP and try again."
 msgstr "يرجى التحقق من رمز OTP والمحاولة مرة أخرى."
 
-#: backend/app/api/services/user_auth.py:311
+#: backend/app/api/services/user_auth.py:290
 msgid "Expired OTP"
 msgstr "رمز التحقق منتهي الصلاحية"
 
-#: backend/app/api/services/user_auth.py:312
+#: backend/app/api/services/user_auth.py:291
 msgid "Please request a new OTP and try again."
 msgstr "يرجى طلب رمز OTP جديد والمحاولة مرة أخرى."
 
-#: backend/app/api/services/user_auth.py:328
+#: backend/app/api/services/user_auth.py:307
 msgid "An unexpected error occurred while verifying OTP."
 msgstr "حدث خطأ غير متوقع أثناء التحقق من رمز OTP."
 
-#: backend/app/api/services/user_auth.py:357
+#: backend/app/api/services/user_auth.py:336
 msgid "Your account is temporarily locked"
 msgstr "حسابك مقفل مؤقتاً"
 
-#: backend/app/api/services/user_auth.py:358
+#: backend/app/api/services/user_auth.py:337
 #, python-brace-format
 msgid "Please try again after {remaining_minutes} minutes."
 msgstr "يرجى المحاولة مرة أخرى بعد {remaining_minutes} دقيقة."
+
+#: backend/app/auth/schema.py:70 backend/app/auth/schema.py:121
+msgid "Passwords do not match"
+msgstr "كلمتا المرور غير متطابقتين"
+
+#: backend/app/auth/schema.py:71
+msgid "Please ensure that the password and confirm password fields match."
+msgstr "يرجى التأكد من تطابق حقلي كلمة المرور وتأكيد كلمة المرور."
+
+#: backend/app/auth/schema.py:122
+msgid "Please ensure that the new password and confirm new password fields match."
+msgstr "يرجى التأكد من تطابق حقلي كلمة المرور الجديدة وتأكيد كلمة المرور الجديدة."
 
 #: backend/app/core/emails/templates/account_lockout.html:3
 #: backend/app/core/emails/templates/account_lockout.txt:3
@@ -358,7 +393,6 @@ msgid "Welcome to %(site_name)s"
 msgstr "مرحباً بك في %(site_name)s!"
 
 #: backend/app/core/emails/templates/activation.html:9
-#: backend/app/core/emails/templates/activation.txt:8
 msgid ""
 "Thank you for registering. Please click the button below to activate your"
 " account:"
@@ -369,15 +403,29 @@ msgid "Activate Account"
 msgstr "تفعيل الحساب"
 
 #: backend/app/core/emails/templates/activation.html:13
-#: backend/app/core/emails/templates/activation.txt:12
+#: backend/app/core/emails/templates/password_reset.html:15
 msgid "If the button doesn't work, copy and paste this link into your browser:"
 msgstr "إذا لم يعمل الزر، انسخ والصق هذا الرابط في المتصفح:"
 
 #: backend/app/core/emails/templates/activation.html:17
 #: backend/app/core/emails/templates/activation.txt:14
-#, python-format
-msgid "This activation link will expire in %(expiry_time)s minutes."
+#, fuzzy, python-format
+msgid "This link will expire in %(expiry_time)s minutes."
 msgstr "سينتهي صلاحية رابط التفعيل خلال %(expiry_time)s دقيقة."
+
+#: backend/app/core/emails/templates/activation.txt:8
+#, fuzzy
+msgid ""
+"Thank you for registering. Please click the link below to activate your "
+"account:"
+msgstr "شكراً لتسجيلك. يرجى النقر على الزر أدناه لتفعيل حسابك:"
+
+#: backend/app/core/emails/templates/activation.txt:12
+#, fuzzy
+msgid ""
+"Note: if you cannot click the link, please copy and paste it into your "
+"browser."
+msgstr "إذا لم يعمل الزر، انسخ والصق هذا الرابط في المتصفح:"
 
 #: backend/app/core/emails/templates/base.html:47
 #: backend/app/core/emails/templates/base.txt:4
@@ -401,6 +449,8 @@ msgstr ""
 
 #: backend/app/core/emails/templates/login_otp.html:8
 #: backend/app/core/emails/templates/login_otp.txt:6
+#: backend/app/core/emails/templates/password_reset.html:8
+#: backend/app/core/emails/templates/password_reset.txt:6
 msgid "Hello,"
 msgstr "مرحباً،"
 
@@ -428,230 +478,44 @@ msgstr ""
 "إذا لم تطلب هذا الرمز، يرجى تجاهل هذا البريد الإلكتروني والاتصال بفريق "
 "الدعم فوراً."
 
-#~ msgid "Hello, {name}!"
-#~ msgstr "مرحباً، {name}!"
+#: backend/app/core/emails/templates/password_reset.html:3
+msgid "Password Reset Request"
+msgstr ""
 
-# Authentication Messages
-#~ msgid "Invalid credentials"
-#~ msgstr "بيانات الاعتماد غير صحيحة"
+#: backend/app/core/emails/templates/password_reset.html:5
+#: backend/app/core/emails/templates/password_reset.txt:3
+msgid "Reset Your Password"
+msgstr ""
 
-#~ msgid "Account locked due to too many failed attempts"
-#~ msgstr "تم قفل الحساب بسبب كثرة المحاولات الفاشلة"
+#: backend/app/core/emails/templates/password_reset.html:9
+msgid ""
+"We received a request to reset your password. Please click the button "
+"below to reset your password:"
+msgstr ""
 
-#~ msgid "OTP sent successfully"
-#~ msgstr "تم إرسال رمز التحقق بنجاح"
+#: backend/app/core/emails/templates/password_reset.html:12
+msgid "Reset Password"
+msgstr ""
 
-#~ msgid "Invalid or expired OTP"
-#~ msgstr "رمز التحقق غير صالح أو منتهي الصلاحية"
+#: backend/app/core/emails/templates/password_reset.html:20
+#: backend/app/core/emails/templates/password_reset.txt:11
+#, fuzzy, python-format
+msgid "This reset link will expire in %(expiry_time)s minutes."
+msgstr "سينتهي صلاحية رابط التفعيل خلال %(expiry_time)s دقيقة."
 
-#~ msgid "Login successful"
-#~ msgstr "تم تسجيل الدخول بنجاح"
+#: backend/app/core/emails/templates/password_reset.html:22
+#: backend/app/core/emails/templates/password_reset.txt:13
+#, fuzzy
+msgid ""
+"Important: If you didn't request this password reset, please ignore this "
+"email and contact our support team if you have any concerns."
+msgstr ""
+"إذا لم تطلب هذا الرمز، يرجى تجاهل هذا البريد الإلكتروني والاتصال بفريق "
+"الدعم فوراً."
 
-#~ msgid "Logout successful"
-#~ msgstr "تم تسجيل الخروج بنجاح"
-
-#~ msgid "User not found"
-#~ msgstr "المستخدم غير موجود"
-
-#~ msgid "Email already registered"
-#~ msgstr "البريد الإلكتروني مسجل مسبقاً"
-
-#~ msgid "Account created successfully"
-#~ msgstr "تم إنشاء الحساب بنجاح"
-
-#~ msgid "Account activated successfully"
-#~ msgstr "تم تفعيل الحساب بنجاح"
-
-#~ msgid "Activation link expired"
-#~ msgstr "انتهت صلاحية رابط التفعيل"
-
-# Validation Messages
-#~ msgid "Invalid email format"
-#~ msgstr "صيغة البريد الإلكتروني غير صحيحة"
-
-#~ msgid "Password must be at least 8 characters"
-#~ msgstr "يجب أن تكون كلمة المرور 8 أحرف على الأقل"
-
-#~ msgid "Password must contain at least one uppercase letter"
-#~ msgstr "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل"
-
-#~ msgid "Password must contain at least one lowercase letter"
-#~ msgstr "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل"
-
-#~ msgid "Password must contain at least one number"
-#~ msgstr "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل"
-
-#~ msgid "Password must contain at least one special character"
-#~ msgstr "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل"
-
-#~ msgid "First name is required"
-#~ msgstr "الاسم الأول مطلوب"
-
-#~ msgid "Last name is required"
-#~ msgstr "اسم العائلة مطلوب"
-
-# Error Messages
-#~ msgid "Internal server error"
-#~ msgstr "خطأ داخلي في الخادم"
-
-#~ msgid "Resource not found"
-#~ msgstr "المورد غير موجود"
-
-#~ msgid "Unauthorized access"
-#~ msgstr "وصول غير مصرح به"
-
-#~ msgid "Forbidden"
-#~ msgstr "محظور"
-
-#~ msgid "Bad request"
-#~ msgstr "طلب خاطئ"
-
-#~ msgid "Service unavailable"
-#~ msgstr "الخدمة غير متوفرة"
-
-# Plural Forms
-#~ msgid "You have {n} message"
-#~ msgid_plural "You have {n} messages"
-#~ msgstr[0] "ليس لديك رسائل"
-#~ msgstr[1] "لديك رسالة واحدة"
-#~ msgstr[2] "لديك رسالتان"
-#~ msgstr[3] "لديك {n} رسائل"
-#~ msgstr[4] "لديك {n} رسالة"
-#~ msgstr[5] "لديك {n} رسالة"
-
-#~ msgid "You have {n} notification"
-#~ msgid_plural "You have {n} notifications"
-#~ msgstr[0] "ليس لديك إشعارات"
-#~ msgstr[1] "لديك إشعار واحد"
-#~ msgstr[2] "لديك إشعاران"
-#~ msgstr[3] "لديك {n} إشعارات"
-#~ msgstr[4] "لديك {n} إشعار"
-#~ msgstr[5] "لديك {n} إشعار"
-
-# Success Messages
-#~ msgid "Operation completed successfully"
-#~ msgstr "تمت العملية بنجاح"
-
-#~ msgid "Data saved successfully"
-#~ msgstr "تم حفظ البيانات بنجاح"
-
-#~ msgid "Data updated successfully"
-#~ msgstr "تم تحديث البيانات بنجاح"
-
-#~ msgid "Data deleted successfully"
-#~ msgstr "تم حذف البيانات بنجاح"
-
-#~ msgid "This activation link will expire in 24 hours."
-#~ msgstr "سينتهي صلاحية رابط التفعيل خلال 24 ساعة."
-
-#~ msgid "Account Lockout Notification"
-#~ msgstr "إشعار قفل الحساب"
-
-#~ msgid "Account Locked"
-#~ msgstr "الحساب مقفل"
-
-#~ msgid ""
-#~ "To unlock your account, please click "
-#~ "the button below and follow the "
-#~ "instructions:"
-#~ msgstr "لإلغاء قفل حسابك، يرجى النقر على الزر أدناه واتباع التعليمات:"
-
-#~ msgid "Unlock Account"
-#~ msgstr "إلغاء قفل الحساب"
-
-#~ msgid ""
-#~ "If you did not attempt to log "
-#~ "in, we recommend changing your password"
-#~ " immediately once your account is "
-#~ "unlocked."
-#~ msgstr ""
-#~ "إذا لم تكن أنت من حاول تسجيل "
-#~ "الدخول، نوصي بتغيير كلمة المرور فوراً"
-#~ " بعد إلغاء قفل حسابك."
-
-#~ msgid "To unlock your account, please use the link below:"
-#~ msgstr "لإلغاء قفل حسابك، يرجى استخدام الرابط أدناه:"
-
-#~ msgid "If the link doesn't work, copy and paste it into your browser."
-#~ msgstr "إذا لم يعمل الرابط، انسخه والصقه في المتصفح."
-
-#~ msgid "Account Activation"
-#~ msgstr "تفعيل الحساب"
-
-#~ msgid ""
-#~ "If you have any questions, please "
-#~ "contact us at <a "
-#~ "href=\"mailto:%(support_email)s\">%(support_email)s</a>."
-#~ msgstr ""
-#~ "إذا كان لديك أي أسئلة، يرجى "
-#~ "التواصل معنا على <a "
-#~ "href=\"mailto:%(support_email)s\">%(support_email)s</a>."
-
-#~ msgid ""
-#~ "Thanks for using our service! &copy; "
-#~ "%(site_name)s Team. All rights reserved."
-#~ msgstr "شكراً لاستخدامك خدمتنا! &copy; فريق %(site_name)s. جميع الحقوق محفوظة."
-
-#~ msgid "One-Time Password"
-#~ msgstr "كلمة المرور لمرة واحدة"
-
-#~ msgid "Welcome to %(site_name)s!"
-#~ msgstr "مرحباً بك في %(site_name)s!"
-
-#~ msgid "Ready to get started?"
-#~ msgstr "هل أنت مستعدٌ للبدء؟"
-
-#~ msgid ""
-#~ "We're excited to have you. Please "
-#~ "verify your email address to unlock "
-#~ "your full account access."
-#~ msgstr ""
-#~ "يسعدنا انضمامك. يرجى التحقق من عنوان "
-#~ "بريدك الإلكتروني لإلغاء قفل وصولك الكامل"
-#~ " إلى الحساب."
-
-#~ msgid "Button not working? Copy this link:"
-#~ msgstr "الزر لا يعمل؟ انسخ هذا الرابط:"
-
-#~ msgid "Expires in %(expiry_time)s minutes."
-#~ msgstr "تنتهي صلاحيته خلال %(expiry_time)s دقيقة."
-
-# Email Templates
-#~ msgid "Your Security Code"
-#~ msgstr "رمز الأمان الخاص بك"
-
-#~ msgid "Security Verification"
-#~ msgstr "التحقق الأمني"
-
-#~ msgid ""
-#~ "Use the following code to complete "
-#~ "your login. It will be valid for"
-#~ " <strong>%(expiry_time)s minutes</strong>."
-#~ msgstr ""
-#~ "استخدم الرمز التالي لإتمام تسجيل الدخول."
-#~ " سيكون صالحاً لمدة <strong>%(expiry_time)s "
-#~ "دقيقة</strong>."
-
-#~ msgid "Didn't request this?"
-#~ msgstr "لم تطلب هذا؟"
-
-#~ msgid ""
-#~ "If you didn't try to log in, "
-#~ "please ignore this email or contact "
-#~ "support if you're concerned about your"
-#~ " security."
-#~ msgstr ""
-#~ "إذا لم تحاول تسجيل الدخول، يرجى "
-#~ "تجاهل هذا البريد أو التواصل مع "
-#~ "الدعم إذا كنت قلقاً على أمان "
-#~ "حسابك."
-
-# Email Footer Messages
-#~ msgid "If you have any questions, please contact us at %(support_email)s."
-#~ msgstr "إذا كان لديك أي أسئلة، يرجى التواصل معنا على %(support_email)s."
-
-#~ msgid ""
-#~ "Thanks for using our service! © "
-#~ "%(site_name)s Team. All rights reserved."
-#~ msgstr "شكراً لاستخدامك خدمتنا! © فريق %(site_name)s. جميع الحقوق محفوظة."
+#: backend/app/core/emails/templates/password_reset.txt:7
+msgid ""
+"We received a request to reset your password. Please click the link below"
+" to reset your password:"
+msgstr ""
 

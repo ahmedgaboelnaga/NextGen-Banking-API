@@ -59,6 +59,7 @@ class Settings(BaseSettings):
     COOKIE_HTTP_ONLY: bool = True
     COOKIE_SAME_SITE: str = "lax"
     SIGNING_KEY: str = ""
+    PASSWORD_RESET_TOKEN_EXPIRATION_MINUTES: int = 3 if ENVIRONMENT == "local" else 5
 
     # Google OAuth settings
     GOOGLE_CLIENT_ID: str = ""

@@ -43,10 +43,10 @@ def generate_username() -> str:
     return f"{prefix}-{random_string}"
 
 
-def create_activation_token(user_id: uuid.UUID) -> str:
+def create_activation_token(id: uuid.UUID) -> str:
     """Generate a JWT activation token."""
     payload = {
-        "user_id": str(user_id),
+        "id": str(id),
         "type": "activation",
         "exp": datetime.now(timezone.utc)
         + timedelta(minutes=settings.ACTIVATION_TOKEN_EXPIRATION_MINUTES),
@@ -123,3 +123,18 @@ def delete_auth_cookies(response: Response) -> None:
     response.delete_cookie(
         key=settings.COOKIE_LOGGED_IN_NAME, path=settings.COOKIE_PATH
     )
+
+
+def create_password_reset_token(id: uuid.UUID) -> str:
+    """Generate a JWT password reset token."""
+    payload = {
+        "id": str(id),
+        "type": "password_reset",
+        "exp": datetime.now(timezone.utc)
+        + timedelta(minutes=settings.PASSWORD_RESET_TOKEN_EXPIRATION_MINUTES),
+        "iat": datetime.now(timezone.utc),
+    }
+    token = jwt.encode(
+        payload, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM
+    )
+    return token

@@ -116,7 +116,9 @@ class UserAuthService:
                 detail={
                     "status": "error",
                     "message": _("Account is locked"),
-                    "action": _("Please contact support to unlock your account."),
+                    "action": _(
+                        "Please wait for the lockout period to expire and try again."
+                    ),
                 },
             )
         if user.account_status == AccountStatusSchema.INACTIVE:
@@ -216,7 +218,7 @@ class UserAuthService:
             if payload.get("type") != "activation":
                 raise ValueError("Invalid token type")
 
-            user_id = uuid.UUID(payload.get("user_id"))
+            user_id = uuid.UUID(payload.get("id"))
 
             user = await self.get_user_by_id(
                 user_id=user_id, session=session, include_inactive=True
@@ -227,20 +229,10 @@ class UserAuthService:
                     detail={
                         "status": "error",
                         "message": _("User not found"),
-                        "action": _(
-                            "Please check the activation link or contact support."
-                        ),
                     },
                 )
             if user.is_active:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail={
-                        "status": "error",
-                        "message": _("User already activated"),
-                        "action": _("You can log in with your credentials."),
-                    },
-                )
+                raise ValueError("User already activated")
             await self.reset_user_state(
                 user=user, session=session, clear_otp=True, log_action=True
             )
@@ -251,22 +243,9 @@ class UserAuthService:
 
             return user
         except jwt.ExpiredSignatureError:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail={
-                    "status": "error",
-                    "message": _("Activation token expired"),
-                    "action": _("Please request a new activation email."),
-                },
-            )
+            raise ValueError("Activation token expired")
         except jwt.InvalidTokenError:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail={
-                    "status": "error",
-                    "message": _("Invalid activation token"),
-                },
-            )
+            raise ValueError("Invalid activation token")
         except HTTPException as http_exc:
             raise http_exc
         except Exception as e:
@@ -305,7 +284,7 @@ class UserAuthService:
                 timezone.utc
             ):
                 raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
+                    status_code=status.HTTP_410_GONE,
                     detail={
                         "status": "error",
                         "message": _("Expired OTP"),
@@ -317,8 +296,8 @@ class UserAuthService:
 
             return user
 
-        except HTTPException:
-            raise
+        except HTTPException as http_exc:
+            raise http_exc
         except Exception as e:
             logger.error(f"Failed to verify login OTP: {e}")
             raise HTTPException(
@@ -386,6 +365,42 @@ class UserAuthService:
             )
         await session.commit()
         await session.refresh(user)
+
+    async def reset_password(
+        self, token: str, new_password: str, session: AsyncSession
+    ) -> None:
+        try:
+            payload = jwt.decode(
+                token, settings.JWT_SECRET_KEY, algorithms=[settings.JWT_ALGORITHM]
+            )
+            if payload.get("type") != "password_reset":
+                raise ValueError("Invalid token type")
+
+            user_id = uuid.UUID(payload.get("id"))
+
+            user = await self.get_user_by_id(
+                user_id=user_id, session=session, include_inactive=True
+            )
+            if not user:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail={
+                        "status": "error",
+                        "message": _("User not found"),
+                    },
+                )
+            user.hashed_password = generate_password_hash(new_password)
+            await self.reset_user_state(user, session, clear_otp=True, log_action=True)
+            await session.commit()
+            await session.refresh(user)
+            logger.info(f"Password reset successful for user {user.email}")
+        except jwt.ExpiredSignatureError:
+            raise ValueError("Password reset token expired")
+        except jwt.InvalidTokenError:
+            raise ValueError("Invalid password reset token")
+        except Exception as e:
+            logger.error(f"Failed to reset password: {e}")
+            raise
 
 
 user_auth_service = UserAuthService()

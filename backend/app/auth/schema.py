@@ -3,6 +3,7 @@ from enum import Enum
 from sqlmodel import SQLModel, Field
 from pydantic import EmailStr, field_validator
 from fastapi import HTTPException, status
+from backend.app.core.i18n import _
 
 
 class SecurityQuestionSchema(str, Enum):
@@ -66,8 +67,10 @@ class UserCreateSchema(BaseUserSchema):
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail={
                     "status": "error",
-                    "message": "Passwords do not match",
-                    "action": "Please ensure that the password and confirm password fields match.",
+                    "message": _("Passwords do not match"),
+                    "action": _(
+                        "Please ensure that the password and confirm password fields match."
+                    ),
                 },
             )
         return v
@@ -90,3 +93,35 @@ class LoginRequestSchema(SQLModel):
 class OTPVerifyRequestSchema(SQLModel):
     email: EmailStr
     otp: str = Field(min_length=6, max_length=6)
+
+
+class PasswordResetRequestSchema(SQLModel):
+    email: EmailStr
+
+
+class ConfirmPasswordResetSchema(SQLModel):
+    new_password: str = Field(
+        ...,
+        min_length=8,
+        max_length=40,
+    )
+    confirm_password: str = Field(
+        ...,
+        min_length=8,
+        max_length=40,
+    )
+
+    @field_validator("confirm_password")
+    def passwords_match(cls, v, info):
+        if "new_password" in info.data and v != info.data["new_password"]:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail={
+                    "status": "error",
+                    "message": _("Passwords do not match"),
+                    "action": _(
+                        "Please ensure that the new password and confirm new password fields match."
+                    ),
+                },
+            )
+        return v

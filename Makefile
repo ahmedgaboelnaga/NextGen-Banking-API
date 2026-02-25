@@ -53,7 +53,7 @@ i18n-extract:
 i18n-update:
 	@echo "Updating translation files with new messages..."
 	@for lang in en ar fr es; do \
-		uv run pybabel update -i backend/app/locales/messages.pot -d backend/app/locales -l $$lang; \
+		uv run pybabel update -i backend/app/locales/messages.pot -d backend/app/locales -l $$lang --ignore-obsolete; \
 	done
 
 # Complete i18n workflow: extract → update → compile

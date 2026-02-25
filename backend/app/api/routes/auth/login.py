@@ -42,7 +42,7 @@ async def request_login_otp(request_data: LoginRequestSchema, session: SessionDe
                     error_message = _(
                         (
                             "Your account has been temporarily locked due to multiple failed login attempts"
-                            f" Please try again after {settings.LOCKOUT_DURATION_MINUTES} minutes."
+                            f"Please try again after {settings.LOCKOUT_DURATION_MINUTES} minutes."
                         )
                     )
 

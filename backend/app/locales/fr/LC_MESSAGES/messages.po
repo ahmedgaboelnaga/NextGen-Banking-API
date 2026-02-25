@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: NextGen Banking API 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 02:42+0200\n"
+"POT-Creation-Date: 2026-02-25 23:51+0200\n"
 "PO-Revision-Date: 2026-02-17 12:00+0000\n"
 "Last-Translator: API Team\n"
 "Language: fr\n"
@@ -28,58 +28,66 @@ msgid "Account activated successfully."
 msgstr "Compte activé avec succès."
 
 #: backend/app/api/routes/auth/activate.py:28
-msgid "Activation link has expired."
-msgstr "Le lien d'activation a expiré."
-
-#: backend/app/api/routes/auth/activate.py:29
-#: backend/app/api/services/user_auth.py:259
-msgid "Please request a new activation email."
-msgstr "Veuillez demander un nouvel e-mail d'activation."
-
-#: backend/app/api/routes/auth/activate.py:39
+#: backend/app/api/routes/auth/activate.py:48
 msgid "Invalid activation link."
 msgstr "Lien d'activation invalide."
 
-#: backend/app/api/routes/auth/activate.py:40
+#: backend/app/api/routes/auth/activate.py:29
+#: backend/app/api/routes/auth/activate.py:49
+#: backend/app/api/routes/auth/password_reset.py:76
+#: backend/app/api/routes/auth/password_reset.py:85
 msgid "Please confirm that the link is correct."
 msgstr "Veuillez confirmer que le lien est correct."
 
-#: backend/app/api/routes/auth/activate.py:48
-msgid "Account is already active."
-msgstr "Le compte est déjà actif."
+#: backend/app/api/routes/auth/activate.py:37
+msgid "Activation link has expired."
+msgstr "Le lien d'activation a expiré."
 
-#: backend/app/api/routes/auth/activate.py:49
-#: backend/app/api/routes/auth/activate.py:88
-msgid "Please log in with your credentials."
-msgstr "Veuillez vous connecter avec vos identifiants."
+#: backend/app/api/routes/auth/activate.py:38
+msgid "Please request a new activation email."
+msgstr "Veuillez demander un nouvel e-mail d'activation."
 
-#: backend/app/api/routes/auth/activate.py:61
+#: backend/app/api/routes/auth/activate.py:57
+msgid "User already activated"
+msgstr "Utilisateur déjà activé"
+
+#: backend/app/api/routes/auth/activate.py:58
+msgid "You can log in with your credentials."
+msgstr "Vous pouvez vous connecter avec vos identifiants."
+
+#: backend/app/api/routes/auth/activate.py:71
 msgid "Failed to activate user account."
 msgstr "Échec de l'activation du compte utilisateur."
 
-#: backend/app/api/routes/auth/activate.py:62
-#: backend/app/api/routes/auth/activate.py:109
+#: backend/app/api/routes/auth/activate.py:72
+#: backend/app/api/routes/auth/activate.py:119
 #: backend/app/api/routes/auth/google.py:75
 #: backend/app/api/routes/auth/login.py:87
 #: backend/app/api/routes/auth/login.py:129
+#: backend/app/api/routes/auth/password_reset.py:45
+#: backend/app/api/routes/auth/password_reset.py:98
 #: backend/app/api/services/oauth_service.py:114
-#: backend/app/api/services/user_auth.py:329
+#: backend/app/api/services/user_auth.py:308
 msgid "Please try again later."
 msgstr "Veuillez réessayer plus tard."
 
-#: backend/app/api/routes/auth/activate.py:78
+#: backend/app/api/routes/auth/activate.py:88
 msgid "User not found."
 msgstr "Utilisateur non trouvé."
 
-#: backend/app/api/routes/auth/activate.py:79
+#: backend/app/api/routes/auth/activate.py:89
 msgid "Please check the email address and try again."
 msgstr "Veuillez vérifier l'adresse e-mail et réessayer."
 
-#: backend/app/api/routes/auth/activate.py:87
+#: backend/app/api/routes/auth/activate.py:97
 msgid "Account is already activated."
 msgstr "Le compte est déjà activé."
 
-#: backend/app/api/routes/auth/activate.py:94
+#: backend/app/api/routes/auth/activate.py:98
+msgid "Please log in with your credentials."
+msgstr "Veuillez vous connecter avec vos identifiants."
+
+#: backend/app/api/routes/auth/activate.py:104
 msgid ""
 "Activation email resent successfully, please check your inbox for "
 "activation link."
@@ -87,7 +95,7 @@ msgstr ""
 "E-mail d'activation renvoyé avec succès, veuillez vérifier votre boîte de"
 " réception pour le lien d'activation."
 
-#: backend/app/api/routes/auth/activate.py:108
+#: backend/app/api/routes/auth/activate.py:118
 msgid "Failed to resend activation email."
 msgstr "Échec du renvoi de l'e-mail d'activation."
 
@@ -141,6 +149,40 @@ msgstr "Échec du traitement de la demande d'OTP de connexion."
 msgid "Failed to verify login OTP request."
 msgstr "Échec de la vérification de la demande d'OTP de connexion."
 
+#: backend/app/api/routes/auth/password_reset.py:32
+msgid "If an account with that email exists, a password reset link has been sent."
+msgstr ""
+
+#: backend/app/api/routes/auth/password_reset.py:42
+#, fuzzy
+msgid "An unexpected error occurred while processing your request."
+msgstr "Une erreur inattendue s'est produite lors de la vérification de l'OTP."
+
+#: backend/app/api/routes/auth/password_reset.py:56
+msgid "Password has been reset successfully."
+msgstr ""
+
+#: backend/app/api/routes/auth/password_reset.py:64
+#, fuzzy
+msgid "Password reset link has expired."
+msgstr "Le lien d'activation a expiré."
+
+#: backend/app/api/routes/auth/password_reset.py:65
+#, fuzzy
+msgid "Please request a new password reset email."
+msgstr "Veuillez demander un nouvel e-mail d'activation."
+
+#: backend/app/api/routes/auth/password_reset.py:75
+#: backend/app/api/routes/auth/password_reset.py:84
+#, fuzzy
+msgid "Invalid password reset link."
+msgstr "Lien d'activation invalide."
+
+#: backend/app/api/routes/auth/password_reset.py:97
+#, fuzzy
+msgid "An unexpected error occurred while resetting password."
+msgstr "Une erreur inattendue s'est produite lors de la vérification de l'OTP."
+
 # Register Route Messages
 #: backend/app/api/routes/auth/register.py:35
 #: backend/app/api/routes/auth/register.py:74
@@ -185,88 +227,81 @@ msgstr ""
 "réessayer."
 
 # User Auth Service Messages
-#: backend/app/api/services/user_auth.py:107
+#: backend/app/api/services/user_auth.py:109
 msgid "Account is not active"
 msgstr "Le compte n'est pas actif"
 
-#: backend/app/api/services/user_auth.py:108
+#: backend/app/api/services/user_auth.py:110
 msgid "Please activate your account using the link sent to your email."
 msgstr ""
 "Veuillez activer votre compte en utilisant le lien envoyé à votre adresse"
 " e-mail."
 
-#: backend/app/api/services/user_auth.py:118
+#: backend/app/api/services/user_auth.py:120
 msgid "Account is locked"
 msgstr "Le compte est verrouillé"
 
-#: backend/app/api/services/user_auth.py:119
-msgid "Please contact support to unlock your account."
-msgstr "Veuillez contacter le support pour déverrouiller votre compte."
+#: backend/app/api/services/user_auth.py:121
+msgid "Please wait for the lockout period to expire and try again."
+msgstr "Veuillez attendre la fin de la période de verrouillage et réessayer."
 
-#: backend/app/api/services/user_auth.py:127
+#: backend/app/api/services/user_auth.py:129
 msgid "Account is inactive"
 msgstr "Le compte est inactif"
 
-#: backend/app/api/services/user_auth.py:128
+#: backend/app/api/services/user_auth.py:130
 msgid "Please contact support to activate your account."
 msgstr "Veuillez contacter le support pour activer votre compte."
 
-#: backend/app/api/services/user_auth.py:229
+#: backend/app/api/services/user_auth.py:231
+#: backend/app/api/services/user_auth.py:389
 msgid "User not found"
 msgstr "Utilisateur non trouvé"
 
-#: backend/app/api/services/user_auth.py:230
-msgid "Please check the activation link or contact support."
-msgstr "Veuillez vérifier le lien d'activation ou contacter le support."
-
-#: backend/app/api/services/user_auth.py:240
-msgid "User already activated"
-msgstr "Utilisateur déjà activé"
-
-#: backend/app/api/services/user_auth.py:241
-msgid "You can log in with your credentials."
-msgstr "Vous pouvez vous connecter avec vos identifiants."
-
-#: backend/app/api/services/user_auth.py:258
-msgid "Activation token expired"
-msgstr "Jeton d'activation expiré"
-
-#: backend/app/api/services/user_auth.py:267
-msgid "Invalid activation token"
-msgstr "Jeton d'activation invalide"
-
-#: backend/app/api/services/user_auth.py:286
+#: backend/app/api/services/user_auth.py:265
 msgid "Invalid credentials"
 msgstr "Identifiants invalides"
 
-#: backend/app/api/services/user_auth.py:299
+#: backend/app/api/services/user_auth.py:278
 msgid "Invalid OTP"
 msgstr "OTP invalide"
 
-#: backend/app/api/services/user_auth.py:300
+#: backend/app/api/services/user_auth.py:279
 msgid "Please check your OTP and try again."
 msgstr "Veuillez vérifier votre OTP et réessayer."
 
-#: backend/app/api/services/user_auth.py:311
+#: backend/app/api/services/user_auth.py:290
 msgid "Expired OTP"
 msgstr "OTP expiré"
 
-#: backend/app/api/services/user_auth.py:312
+#: backend/app/api/services/user_auth.py:291
 msgid "Please request a new OTP and try again."
 msgstr "Veuillez demander un nouvel OTP et réessayer."
 
-#: backend/app/api/services/user_auth.py:328
+#: backend/app/api/services/user_auth.py:307
 msgid "An unexpected error occurred while verifying OTP."
 msgstr "Une erreur inattendue s'est produite lors de la vérification de l'OTP."
 
-#: backend/app/api/services/user_auth.py:357
+#: backend/app/api/services/user_auth.py:336
 msgid "Your account is temporarily locked"
 msgstr "Votre compte est temporairement verrouillé"
 
-#: backend/app/api/services/user_auth.py:358
+#: backend/app/api/services/user_auth.py:337
 #, python-brace-format
 msgid "Please try again after {remaining_minutes} minutes."
 msgstr "Veuillez réessayer après {remaining_minutes} minutes."
+
+#: backend/app/auth/schema.py:70 backend/app/auth/schema.py:121
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: backend/app/auth/schema.py:71
+msgid "Please ensure that the password and confirm password fields match."
+msgstr "Veuillez vous assurer que les champs mot de passe et confirmer le mot de passe correspondent."
+
+#: backend/app/auth/schema.py:122
+msgid "Please ensure that the new password and confirm new password fields match."
+msgstr "Veuillez vous assurer que les champs nouveau mot de passe et confirmer le nouveau mot de passe correspondent."
 
 #: backend/app/core/emails/templates/account_lockout.html:3
 #: backend/app/core/emails/templates/account_lockout.txt:3
@@ -366,7 +401,6 @@ msgid "Welcome to %(site_name)s"
 msgstr "Bienvenue sur %(site_name)s!"
 
 #: backend/app/core/emails/templates/activation.html:9
-#: backend/app/core/emails/templates/activation.txt:8
 msgid ""
 "Thank you for registering. Please click the button below to activate your"
 " account:"
@@ -379,7 +413,7 @@ msgid "Activate Account"
 msgstr "Activer le compte"
 
 #: backend/app/core/emails/templates/activation.html:13
-#: backend/app/core/emails/templates/activation.txt:12
+#: backend/app/core/emails/templates/password_reset.html:15
 msgid "If the button doesn't work, copy and paste this link into your browser:"
 msgstr ""
 "Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre "
@@ -387,9 +421,27 @@ msgstr ""
 
 #: backend/app/core/emails/templates/activation.html:17
 #: backend/app/core/emails/templates/activation.txt:14
-#, python-format
-msgid "This activation link will expire in %(expiry_time)s minutes."
+#, fuzzy, python-format
+msgid "This link will expire in %(expiry_time)s minutes."
 msgstr "Ce lien d'activation expirera dans %(expiry_time)s minutes."
+
+#: backend/app/core/emails/templates/activation.txt:8
+#, fuzzy
+msgid ""
+"Thank you for registering. Please click the link below to activate your "
+"account:"
+msgstr ""
+"Merci de vous être inscrit. Veuillez cliquer sur le bouton ci-dessous "
+"pour activer votre compte:"
+
+#: backend/app/core/emails/templates/activation.txt:12
+#, fuzzy
+msgid ""
+"Note: if you cannot click the link, please copy and paste it into your "
+"browser."
+msgstr ""
+"Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre "
+"navigateur:"
 
 #: backend/app/core/emails/templates/base.html:47
 #: backend/app/core/emails/templates/base.txt:4
@@ -413,6 +465,8 @@ msgstr ""
 
 #: backend/app/core/emails/templates/login_otp.html:8
 #: backend/app/core/emails/templates/login_otp.txt:6
+#: backend/app/core/emails/templates/password_reset.html:8
+#: backend/app/core/emails/templates/password_reset.txt:6
 msgid "Hello,"
 msgstr "Bonjour,"
 
@@ -440,237 +494,44 @@ msgstr ""
 "Si vous n'avez pas demandé ce OTP, veuillez ignorer cet email et "
 "contacter notre équipe de support immédiatement."
 
-#~ msgid "Hello, {name}!"
-#~ msgstr "Bonjour, {name}!"
+#: backend/app/core/emails/templates/password_reset.html:3
+msgid "Password Reset Request"
+msgstr ""
 
-# Authentication Messages
-#~ msgid "Invalid credentials"
-#~ msgstr "Identifiants invalides"
+#: backend/app/core/emails/templates/password_reset.html:5
+#: backend/app/core/emails/templates/password_reset.txt:3
+msgid "Reset Your Password"
+msgstr ""
 
-#~ msgid "Account locked due to too many failed attempts"
-#~ msgstr "Compte verrouillé en raison de trop nombreuses tentatives échouées"
+#: backend/app/core/emails/templates/password_reset.html:9
+msgid ""
+"We received a request to reset your password. Please click the button "
+"below to reset your password:"
+msgstr ""
 
-#~ msgid "OTP sent successfully"
-#~ msgstr "OTP envoyé avec succès"
+#: backend/app/core/emails/templates/password_reset.html:12
+msgid "Reset Password"
+msgstr ""
 
-#~ msgid "Invalid or expired OTP"
-#~ msgstr "OTP invalide ou expiré"
+#: backend/app/core/emails/templates/password_reset.html:20
+#: backend/app/core/emails/templates/password_reset.txt:11
+#, fuzzy, python-format
+msgid "This reset link will expire in %(expiry_time)s minutes."
+msgstr "Ce lien d'activation expirera dans %(expiry_time)s minutes."
 
-#~ msgid "Login successful"
-#~ msgstr "Connexion réussie"
+#: backend/app/core/emails/templates/password_reset.html:22
+#: backend/app/core/emails/templates/password_reset.txt:13
+#, fuzzy
+msgid ""
+"Important: If you didn't request this password reset, please ignore this "
+"email and contact our support team if you have any concerns."
+msgstr ""
+"Si vous n'avez pas demandé ce OTP, veuillez ignorer cet email et "
+"contacter notre équipe de support immédiatement."
 
-#~ msgid "Logout successful"
-#~ msgstr "Déconnexion réussie"
-
-#~ msgid "User not found"
-#~ msgstr "Utilisateur non trouvé"
-
-#~ msgid "Email already registered"
-#~ msgstr "Email déjà enregistré"
-
-#~ msgid "Account created successfully"
-#~ msgstr "Compte créé avec succès"
-
-#~ msgid "Account activated successfully"
-#~ msgstr "Compte activé avec succès"
-
-#~ msgid "Activation link expired"
-#~ msgstr "Lien d'activation expiré"
-
-# Validation Messages
-#~ msgid "Invalid email format"
-#~ msgstr "Format d'email invalide"
-
-#~ msgid "Password must be at least 8 characters"
-#~ msgstr "Le mot de passe doit contenir au moins 8 caractères"
-
-#~ msgid "Password must contain at least one uppercase letter"
-#~ msgstr "Le mot de passe doit contenir au moins une lettre majuscule"
-
-#~ msgid "Password must contain at least one lowercase letter"
-#~ msgstr "Le mot de passe doit contenir au moins une lettre minuscule"
-
-#~ msgid "Password must contain at least one number"
-#~ msgstr "Le mot de passe doit contenir au moins un chiffre"
-
-#~ msgid "Password must contain at least one special character"
-#~ msgstr "Le mot de passe doit contenir au moins un caractère spécial"
-
-#~ msgid "First name is required"
-#~ msgstr "Le prénom est requis"
-
-#~ msgid "Last name is required"
-#~ msgstr "Le nom de famille est requis"
-
-# Error Messages
-#~ msgid "Internal server error"
-#~ msgstr "Erreur interne du serveur"
-
-#~ msgid "Resource not found"
-#~ msgstr "Ressource non trouvée"
-
-#~ msgid "Unauthorized access"
-#~ msgstr "Accès non autorisé"
-
-#~ msgid "Forbidden"
-#~ msgstr "Interdit"
-
-#~ msgid "Bad request"
-#~ msgstr "Mauvaise requête"
-
-#~ msgid "Service unavailable"
-#~ msgstr "Service indisponible"
-
-# Plural Forms
-#~ msgid "You have {n} message"
-#~ msgid_plural "You have {n} messages"
-#~ msgstr[0] "Vous avez {n} message"
-#~ msgstr[1] "Vous avez {n} messages"
-
-#~ msgid "You have {n} notification"
-#~ msgid_plural "You have {n} notifications"
-#~ msgstr[0] "Vous avez {n} notification"
-#~ msgstr[1] "Vous avez {n} notifications"
-
-# Success Messages
-#~ msgid "Operation completed successfully"
-#~ msgstr "Opération terminée avec succès"
-
-#~ msgid "Data saved successfully"
-#~ msgstr "Données enregistrées avec succès"
-
-#~ msgid "Data updated successfully"
-#~ msgstr "Données mises à jour avec succès"
-
-#~ msgid "Data deleted successfully"
-#~ msgstr "Données supprimées avec succès"
-
-#~ msgid "This activation link will expire in 24 hours."
-#~ msgstr "Ce lien d'activation expirera dans 24 heures."
-
-#~ msgid "Account Lockout Notification"
-#~ msgstr "Notification de verrouillage de compte"
-
-#~ msgid "Account Locked"
-#~ msgstr "Compte verrouillé"
-
-#~ msgid ""
-#~ "To unlock your account, please click "
-#~ "the button below and follow the "
-#~ "instructions:"
-#~ msgstr ""
-#~ "Pour déverrouiller votre compte, veuillez "
-#~ "cliquer sur le bouton ci-dessous "
-#~ "et suivre les instructions:"
-
-#~ msgid "Unlock Account"
-#~ msgstr "Déverrouiller le compte"
-
-#~ msgid ""
-#~ "If you did not attempt to log "
-#~ "in, we recommend changing your password"
-#~ " immediately once your account is "
-#~ "unlocked."
-#~ msgstr ""
-#~ "Si vous n'avez pas tenté de vous"
-#~ " connecter, nous vous recommandons de "
-#~ "changer votre mot de passe immédiatement"
-#~ " une fois votre compte déverrouillé."
-
-#~ msgid "To unlock your account, please use the link below:"
-#~ msgstr "Pour déverrouiller votre compte, veuillez utiliser le lien ci-dessous:"
-
-#~ msgid "If the link doesn't work, copy and paste it into your browser."
-#~ msgstr ""
-#~ "Si le lien ne fonctionne pas, "
-#~ "copiez-le et collez-le dans votre "
-#~ "navigateur."
-
-#~ msgid "Account Activation"
-#~ msgstr "Activation du compte"
-
-# Email Footer Messages
-#~ msgid ""
-#~ "If you have any questions, please "
-#~ "contact us at <a "
-#~ "href=\"mailto:%(support_email)s\">%(support_email)s</a>."
-#~ msgstr ""
-#~ "Si vous avez des questions, veuillez "
-#~ "nous contacter à <a "
-#~ "href=\"mailto:%(support_email)s\">%(support_email)s</a>."
-
-#~ msgid ""
-#~ "Thanks for using our service! &copy; "
-#~ "%(site_name)s Team. All rights reserved."
-#~ msgstr ""
-#~ "Merci d'utiliser notre service! &copy; "
-#~ "Équipe %(site_name)s. Tous droits réservés."
-
-#~ msgid "One-Time Password"
-#~ msgstr "Mot de passe à usage unique"
-
-#~ msgid "Welcome to %(site_name)s!"
-#~ msgstr "Bienvenue sur %(site_name)s !"
-
-#~ msgid "Ready to get started?"
-#~ msgstr "Prêt à commencer ?"
-
-#~ msgid ""
-#~ "We're excited to have you. Please "
-#~ "verify your email address to unlock "
-#~ "your full account access."
-#~ msgstr ""
-#~ "Nous sommes ravis de vous accueillir."
-#~ " Veuillez vérifier votre adresse e-mail "
-#~ "pour débloquer l'accès complet à votre"
-#~ " compte."
-
-#~ msgid "Button not working? Copy this link:"
-#~ msgstr "Le bouton ne fonctionne pas ? Copiez ce lien :"
-
-#~ msgid "Expires in %(expiry_time)s minutes."
-#~ msgstr "Expire dans %(expiry_time)s minutes."
-
-# Email Templates
-#~ msgid "Your Security Code"
-#~ msgstr "Votre code de sécurité"
-
-#~ msgid "Security Verification"
-#~ msgstr "Vérification de sécurité"
-
-#~ msgid ""
-#~ "Use the following code to complete "
-#~ "your login. It will be valid for"
-#~ " <strong>%(expiry_time)s minutes</strong>."
-#~ msgstr ""
-#~ "Utilisez le code suivant pour compléter"
-#~ " votre connexion. Il sera valide "
-#~ "pendant <strong>%(expiry_time)s minutes</strong>."
-
-#~ msgid "Didn't request this?"
-#~ msgstr "Vous n'avez pas demandé cela ?"
-
-#~ msgid ""
-#~ "If you didn't try to log in, "
-#~ "please ignore this email or contact "
-#~ "support if you're concerned about your"
-#~ " security."
-#~ msgstr ""
-#~ "Si vous n'avez pas essayé de vous"
-#~ " connecter, veuillez ignorer cet e-mail "
-#~ "ou contacter le support si vous "
-#~ "êtes inquiet de votre sécurité."
-
-# Email Footer Messages
-#~ msgid "If you have any questions, please contact us at %(support_email)s."
-#~ msgstr ""
-#~ "Si vous avez des questions, veuillez "
-#~ "nous contacter à %(support_email)s."
-
-#~ msgid ""
-#~ "Thanks for using our service! © "
-#~ "%(site_name)s Team. All rights reserved."
-#~ msgstr ""
-#~ "Merci d'utiliser notre service! © Équipe"
-#~ " %(site_name)s. Tous droits réservés."
+#: backend/app/core/emails/templates/password_reset.txt:7
+msgid ""
+"We received a request to reset your password. Please click the link below"
+" to reset your password:"
+msgstr ""
 

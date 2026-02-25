@@ -20,7 +20,16 @@ async def activate_account(token: str, session: SessionDep):
         return {"message": _("Account activated successfully."), "email": user.email}
     except ValueError as ve:
         error_msg = str(ve)
-        if error_msg == "Activation token expired":
+        if error_msg == "Invalid token type":
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail={
+                    "status": "error",
+                    "message": _("Invalid activation link."),
+                    "action": _("Please confirm that the link is correct."),
+                },
+            )
+        elif error_msg == "Activation token expired":
             raise HTTPException(
                 status_code=status.HTTP_410_GONE,
                 detail={
@@ -45,10 +54,11 @@ async def activate_account(token: str, session: SessionDep):
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail={
                     "status": "error",
-                    "message": _("Account is already active."),
-                    "action": _("Please log in with your credentials."),
+                    "message": _("User already activated"),
+                    "action": _("You can log in with your credentials."),
                 },
             )
+
     except HTTPException as http_exc:
         logger.error(f"Activation error: {http_exc.detail}")
         raise http_exc

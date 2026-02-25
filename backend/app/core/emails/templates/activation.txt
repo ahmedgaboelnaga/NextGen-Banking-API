@@ -5,11 +5,11 @@
 {% block content %}
 {% trans %}Welcome to {{ site_name }}{% endtrans %}
 
-{% trans %}Thank you for registering. Please click the button below to activate your account:{% endtrans %}
+{% trans %}Thank you for registering. Please click the link below to activate your account:{% endtrans %}
 
 {{ activation_url }}
 
-{% trans %}If the button doesn't work, copy and paste this link into your browser:{% endtrans %}
+{% trans %}Note: if you cannot click the link, please copy and paste it into your browser.{% endtrans %}
 
-{% trans %}This activation link will expire in {{ expiry_time }} minutes.{% endtrans %}
+{% trans %}This link will expire in {{ expiry_time }} minutes.{% endtrans %}
 {% endblock %}
