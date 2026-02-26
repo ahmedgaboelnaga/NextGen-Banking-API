@@ -7,6 +7,7 @@ from backend.app.api.routes.auth import (
     google,
     password_reset,
     refresh,
+    logout,
 )
 
 api_router = APIRouter()
@@ -18,3 +19,4 @@ api_router.include_router(login.router)
 api_router.include_router(google.router)
 api_router.include_router(password_reset.router)
 api_router.include_router(refresh.router)
+api_router.include_router(logout.router)
