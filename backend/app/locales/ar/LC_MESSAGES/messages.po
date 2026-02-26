@@ -140,7 +140,7 @@ msgstr "يرجى تفعيل حسابك قبل تسجيل الدخول."
 
 #: backend/app/api/routes/auth/login.py:73
 msgid "If an account exists with this email, an OTP has been sent to it."
-msgstr ""
+msgstr "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فقد تم إرسال رمز تحقق (OTP) إليه."
 
 #: backend/app/api/routes/auth/login.py:86
 msgid "Failed to process login OTP request."
