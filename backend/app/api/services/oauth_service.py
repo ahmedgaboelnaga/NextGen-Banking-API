@@ -101,7 +101,7 @@ class OAuthService:
 
     async def _generate_unique_id_no(self, session: AsyncSession) -> int:
         """Generate a random 7-digit id_no that doesn't already exist."""
-        for _ in range(10):
+        for i in range(10):
             candidate = random.randint(1_000_000, 9_999_999)
             result = await session.exec(select(User).where(User.id_no == candidate))
             if result.first() is None:

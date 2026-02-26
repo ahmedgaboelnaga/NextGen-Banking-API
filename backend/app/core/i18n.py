@@ -3,8 +3,6 @@ Internationalization (i18n) utilities for the application.
 Provides translation support using Babel and gettext.
 """
 
-import os
-import gettext
 from pathlib import Path
 from typing import Optional
 from contextvars import ContextVar

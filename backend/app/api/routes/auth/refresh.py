@@ -1,9 +1,6 @@
-from email.policy import HTTP
-import stat
 import uuid
 import jwt
 from fastapi import APIRouter, Response, status, Cookie, HTTPException
-from sentry_sdk import HttpTransport
 from backend.app.core.db import SessionDep
 from backend.app.auth.utils import create_jwt_token, set_auth_cookies
 from backend.app.api.services.user_auth import user_auth_service
