@@ -1,4 +1,3 @@
-import random
 import uuid
 
 from fastapi import HTTPException, status
@@ -99,22 +98,6 @@ class OAuthService:
     # OAuth user creation
     # ------------------------------------------------------------------
 
-    async def _generate_unique_id_no(self, session: AsyncSession) -> int:
-        """Generate a random 7-digit id_no that doesn't already exist."""
-        for i in range(10):
-            candidate = random.randint(1_000_000, 9_999_999)
-            result = await session.exec(select(User).where(User.id_no == candidate))
-            if result.first() is None:
-                return candidate
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail={
-                "status": "error",
-                "message": _("Failed to generate a unique user ID. Please try again."),
-                "action": _("Please try again later."),
-            },
-        )
-
     async def create_oauth_user(
         self,
         google_info: dict,
@@ -122,13 +105,15 @@ class OAuthService:
     ) -> User:
         """
         Create a brand-new User from Google userinfo payload.
-        The account is immediately active because Google verified the email.
+
+        The Google provider has verified the user's email, so the account is
+        set to PENDING_KYC: authenticated, but no national ID on file yet.
+        The user must complete KYC (submit their national ID) before they can
+        perform any banking operations.  id_no is left NULL until that step.
         """
         email: str = google_info["email"]
         first_name: str = (google_info.get("given_name") or email.split("@")[0])[:30]
         last_name: str = (google_info.get("family_name") or "User")[:30]
-
-        id_no = await self._generate_unique_id_no(session)
 
         # A random hash the user can never reproduce — locks out password login
         dummy_hash = generate_password_hash(uuid.uuid4().hex)
@@ -137,11 +122,12 @@ class OAuthService:
             email=email,
             first_name=first_name,
             last_name=last_name,
-            id_no=id_no,
+            # id_no intentionally omitted — national ID is collected during KYC.
+            # Generating a random placeholder would be fraudulent in a banking context.
             hashed_password=dummy_hash,
             username=generate_username(),
             is_active=True,
-            account_status=AccountStatusSchema.ACTIVE,
+            account_status=AccountStatusSchema.PENDING_KYC,
             # Required schema fields — user can update these later
             security_question=SecurityQuestionSchema.FAVORITE_COLOR,
             security_answer="oauth_placeholder",
@@ -149,7 +135,7 @@ class OAuthService:
         session.add(user)
         await session.commit()
         await session.refresh(user)
-        logger.info(f"Created new OAuth user: {user.email}")
+        logger.info(f"Created new OAuth user (pending KYC): {user.email}")
         return user
 
     # ------------------------------------------------------------------

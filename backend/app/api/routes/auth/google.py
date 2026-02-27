@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Request, Response, status
 
 from backend.app.api.services.oauth_service import oauth, oauth_service
+from backend.app.auth.schema import AccountStatusSchema
 from backend.app.auth.utils import create_jwt_token, set_auth_cookies
 from backend.app.core.config import settings
 from backend.app.core.db import SessionDep
@@ -82,6 +83,9 @@ async def google_callback(
 
     return {
         "message": _("Login successful."),
+        # kyc_required tells the frontend to redirect the user to the KYC
+        # screen to submit their national ID before they can use banking features.
+        "kyc_required": user.account_status == AccountStatusSchema.PENDING_KYC,
         "user": {
             "email": user.email,
             "username": user.username,
@@ -90,5 +94,6 @@ async def google_callback(
             "full_name": user.full_name,
             "id_no": user.id_no,
             "role": user.role,
+            "account_status": user.account_status,
         },
     }

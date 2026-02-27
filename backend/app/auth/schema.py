@@ -30,6 +30,9 @@ class AccountStatusSchema(str, Enum):
     INACTIVE = "inactive"
     LOCKED = "locked"
     PENDING = "pending"
+    PENDING_KYC = (
+        "pending_kyc"  # OAuth users: authenticated but national ID not yet verified
+    )
 
 
 class RoleChoicesSchema(str, Enum):
@@ -47,7 +50,15 @@ class BaseUserSchema(SQLModel):
     first_name: str = Field(max_length=30)
     middle_name: str | None = Field(default=None, max_length=30)
     last_name: str = Field(max_length=30)
-    id_no: int = Field(unique=True, gt=0)
+    id_no: int | None = Field(
+        default=None,
+        unique=True,
+        gt=0,
+        description=(
+            "National ID number supplied during KYC. "
+            "NULL for OAuth users until identity verification is complete."
+        ),
+    )
     is_active: bool = False
     is_superuser: bool = False
     security_question: SecurityQuestionSchema = Field(max_length=30)
@@ -57,6 +68,9 @@ class BaseUserSchema(SQLModel):
 
 
 class UserCreateSchema(BaseUserSchema):
+    # National ID is mandatory when a user registers directly (KYC at sign-up).
+    # Override the nullable base field so the registration endpoint enforces it.
+    id_no: int = Field(gt=0, description="Customer's national identification number.")
     password: str = Field(min_length=8, max_length=40)
     confirm_password: str = Field(min_length=8, max_length=40)
 
